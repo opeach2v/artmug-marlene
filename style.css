@@ -1,0 +1,121 @@
+@font-face {
+    font-family: "alrim";
+    src: url("./font/SeoulAlrim.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "pretendard-light";
+    src: url("./font/Pretendard-Light.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "pretendard-medium";
+    src: url("./font/Pretendard-Medium.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+h2 {
+    font-family: "alrim", sans-serif;
+    color: #5e3008;
+}
+
+body {
+    font-family: "pretendard-light", sans-serif;
+    color: #351b05;
+}
+
+.page-wrap {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 16px 80px;
+    position: relative;
+    z-index: 1;
+}
+
+section {
+    display: block;
+    padding: 10px;
+    margin-bottom: 32px;
+}
+
+#sec-content {
+    background-color: #f5db8d;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 14px rgba(0, 0, 0, 0.15);
+}
+
+#sec-content h2 {
+    color: #634005;
+    font-size: 36px;
+}
+
+.content-span {
+    margin: 3px;
+    font-size: large;
+    color: #634108;
+    font-family: "pretendard-medium", sans-serif;
+}
+
+.sec-h2-icon {
+    width: 5px;
+    height: 25px;
+    background: linear-gradient(135deg, #f7cb7a, #b97a05);
+    border-radius: 20%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-right: 10px;
+}
+
+#sec-booking {
+}
+
+.booking-box {
+    border: 1px solid #e7e7e7;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 7px 14px rgba(175, 175, 175, 0.15);
+    padding: 20px;
+}
+
+.blank-slot {
+    width: 18px;
+    height: 18px;
+    border: 1px solid #b97a05;
+    border-radius: 50%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin: 0 2px;
+}
+
+.full-slot {
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(135deg, #f3bd59, #b97a05);
+    border-radius: 50%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin: 0 2px;
+}
+
+#sec-introdution {
+}
+
+.introduction-box {
+    border: 1px solid #e7e7e7;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 7px 14px rgba(175, 175, 175, 0.15);
+    padding: 20px;
+}
