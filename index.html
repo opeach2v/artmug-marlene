@@ -8,17 +8,64 @@
     </head>
     <body style="height: auto">
         <div class="page-wrap">
+            <div class="awning">
+                <div class="awning-item"></div>
+                <div class="awning-item"></div>
+                <div class="awning-item"></div>
+                <div class="awning-item"></div>
+                <div class="awning-item"></div>
+                <div class="awning-item"></div>
+                <div class="awning-item"></div>
+                <div class="awning-item"></div>
+                <div class="awning-item"></div>
+                <div class="awning-item"></div>
+                <div class="awning-item"></div>
+                <div class="awning-item"></div>
+                <div class="awning-item"></div>
+                <div class="awning-item"></div>
+                <div class="awning-item"></div>
+            </div>
             <section id="sec-content">
-                <h2>✦ 목차 ✦</h2>
-                <span class="content-span">0. 예약 현황</span>
-                <span class="content-span">1. 작가 소개</span>
-                <span class="content-span">2. 가격표</span>
-                <span class="content-span">3. 작업 순서</span>
-                <span class="content-span">4. 포트폴리오</span>
-                <span class="content-span">5. 주의사항</span>
-                <span class="content-span" style="margin-bottom: 15px"
-                    >6. 문의양식</span
-                >
+                <div>
+                    <h3>MADELEINE</h3>
+                </div>
+                <div>
+                    <span
+                        class="content-span"
+                        onclick="location.href = '#sec-booking'"
+                        >예약 현황</span
+                    >
+                    <span
+                        class="content-span"
+                        onclick="location.href = '#sec-introdution'"
+                        >작가 소개</span
+                    >
+                    <span
+                        class="content-span"
+                        onclick="location.href = '#sec-price'"
+                        >가격표</span
+                    >
+                    <span
+                        class="content-span"
+                        onclick="location.href = '#sec-work'"
+                        >작업 순서</span
+                    >
+                    <span
+                        class="content-span"
+                        onclick="location.href = '#sec-portfolio'"
+                        >포트폴리오</span
+                    >
+                    <span
+                        class="content-span"
+                        onclick="location.href = '#sec-caution'"
+                        >주의사항</span
+                    >
+                    <span
+                        class="content-span"
+                        onclick="location.href = '#sec-form'"
+                        >문의양식</span
+                    >
+                </div>
             </section>
             <section id="sec-booking">
                 <div
@@ -27,63 +74,97 @@
                         flex-direction: row;
                         align-items: center;
                     "
-                >
-                    <p class="sec-h2-icon"></p>
-                    <h2>0. 예약 현황</h2>
-                </div>
-                <div class="booking-box">
-                    <span>N월</span>
+                ></div>
+                <div class="box">
+                    <h2 class="title">0. 예약 현황</h2>
                     <div
                         style="
                             display: flex;
-                            flex-direction: row;
                             align-items: center;
-                        "
-                    >
-                        <span class="blank-slot"></span>
-                        <span class="blank-slot"></span>
-                    </div>
-                    <span>N+1월</span>
-                    <div
-                        style="
-                            display: flex;
-                            flex-direction: row;
-                            align-items: center;
-                        "
-                    >
-                        <span class="full-slot"></span>
-                        <span class="full-slot"></span>
-                    </div>
-                    <div
-                        style="
-                            display: flex;
-                            flex-direction: row;
-                            align-items: center;
-                            gap: 25px;
+                            gap: 60px;
+                            padding-top: 20px;
                         "
                     >
                         <div
                             style="
                                 display: flex;
-                                flex-direction: row;
+                                flex-direction: column;
+                                gap: 5px;
                                 align-items: center;
                             "
                         >
-                            <span class="blank-slot"></span>
-                            <span>&nbsp;- 빈 슬롯</span>
+                            <span style="font-weight: bold; font-size: large"
+                                >N월</span
+                            >
+                            <div
+                                style="
+                                    display: flex;
+                                    flex-direction: row;
+                                    align-items: center;
+                                "
+                            >
+                                <span class="blank-slot"></span>
+                                <span class="blank-slot"></span>
+                            </div>
                         </div>
                         <div
                             style="
                                 display: flex;
-                                flex-direction: row;
+                                flex-direction: column;
+                                gap: 5px;
                                 align-items: center;
                             "
                         >
-                            <span class="full-slot"></span>
-                            <span>&nbsp;- 찬 슬롯</span>
+                            <span style="font-weight: bold; font-size: large"
+                                >N+1월</span
+                            >
+                            <div
+                                style="
+                                    display: flex;
+                                    flex-direction: row;
+                                    align-items: center;
+                                "
+                            >
+                                <span class="full-slot"></span>
+                                <span class="full-slot"></span>
+                            </div>
+                        </div>
+                        <div
+                            style="
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                gap: 10px;
+                            "
+                        >
+                            <div
+                                style="
+                                    display: flex;
+                                    flex-direction: row;
+                                    align-items: center;
+                                "
+                            >
+                                <span class="blank-slot"></span>
+                                <span>&nbsp;- 빈 슬롯</span>
+                            </div>
+                            <div
+                                style="
+                                    display: flex;
+                                    flex-direction: row;
+                                    align-items: center;
+                                "
+                            >
+                                <span class="full-slot"></span>
+                                <span>&nbsp;- 찬 슬롯</span>
+                            </div>
                         </div>
                     </div>
-                    <span style="font-size: 14px; color: gray"
+                    <span
+                        style="
+                            font-size: 16px;
+                            padding-top: 20px;
+                            padding-bottom: 20px;
+                        "
                         >(예약은 입금순으로 진행됩니다.)</span
                     >
                 </div>
@@ -95,41 +176,58 @@
                         flex-direction: row;
                         align-items: center;
                     "
-                >
-                    <p class="sec-h2-icon"></p>
-                    <h2>1. 작가 소개</h2>
-                </div>
-                <div class="introduction-box">
-                    안녕하세요:) 이제 막 버츄얼 작업계에 발을 들이게 된 작가
-                    마들렌이라고 합니다.<br />
-                    원화부터 모델링까지 한 번에, 합리적인 가격으로 제작해
-                    드립니다.<br />
-                    만족스러운 결과물을 위해 정성을 다해 작업해드려요
+                ></div>
+                <div class="box">
+                    <h2 class="title">1. 작가 소개</h2>
+                    <div
+                        style="
+                            padding-top: 20px;
+                            padding-bottom: 20px;
+                            text-align: center;
+                        "
+                    >
+                        안녕하세요:) 이제 막 버츄얼 작업계에 발을 들이게 된 작가
+                        마들렌이라고 합니다.<br />
+                        원화부터 모델링까지 한 번에, 합리적인 가격으로 제작해
+                        드립니다.<br />
+                        만족스러운 결과물을 위해 정성을 다해 작업해드려요
+                    </div>
                 </div>
             </section>
-            <div class="가격표">
-                <h2>2. 가격표</h2>
-                <p>(가격표 수정 후 첨부)</p>
-            </div>
-            <div class="작업 순서">
-                <h2>3. 작업 순서</h2>
-                <p>(작업 순서 첨부)</p>
-                <h3>전달 파일</h3>
-                <p>
-                    FBX, VRM(Mtoon), VSF(Liltoon), or Warudo(Liltoon), 유니티
-                    패키지 중 의뢰자가 요청하는 파일 별도의 추가비용 없이 제공
-                </p>
-            </div>
-            <div class="포트폴리오">
-                <h2>4. 포트폴리오</h2>
-            </div>
-            <div class="주의사항">
-                <h2>5. 주의사항</h2>
-                <p>(주의사항 수정 후 첨부)</p>
-            </div>
-            <div class="문의 양식">
-                <h2>6. 문의 양식</h2>
-            </div>
+            <section id="sec-price">
+                <div class="box">
+                    <h2 class="title">2. 가격표</h2>
+                    <p>(가격표 수정 후 첨부)</p>
+                </div>
+            </section>
+            <section id="sec-work">
+                <div class="box">
+                    <h2 class="title">3. 작업 순서</h2>
+                    <p>(작업 순서 첨부)</p>
+                    <h3>전달 파일</h3>
+                    <p>
+                        FBX, VRM(Mtoon), VSF(Liltoon), or Warudo(Liltoon),
+                        유니티 패키지 중 의뢰자가 요청하는 파일 별도의 추가비용
+                        없이 제공
+                    </p>
+                </div>
+            </section>
+            <section id="sec-portfolio">
+                <div class="box">
+                    <h2 class="title">4. 포트폴리오</h2>
+                </div>
+            </section>
+            <section id="sec-caution">
+                <div class="box">
+                    <h2 class="title">5. 주의사항</h2>
+                    <p>(주의사항 수정 후 첨부)</p>
+                </div>
+            </section>
+            <section id="sec-form">
+                <div class="box">
+                    <h2 class="title">6. 문의 양식</h2>
+                </div>
+            </section>
         </div>
     </body>
 </html>
