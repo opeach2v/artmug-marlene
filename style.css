@@ -161,3 +161,55 @@ section {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     margin: 0 2px;
 }
+
+.input-box {
+    padding: 50px;
+    padding-top: 10px;
+}
+
+.input-span {
+    font-weight: bold;
+}
+
+.input-example::placeholder {
+    color: #f0b803;
+}
+
+.avatar-set {
+    padding: 0 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.booth-item-set {
+    padding: 0 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+textarea::placeholder {
+    color: #ffd700;
+}
+
+button {
+    outline: none;
+    border: 1px solid #b89112;
+    border-radius: 13px;
+    padding: 5px;
+    width: 100%;
+    background-color: #f0b803;
+    box-shadow: 2px 4px 6px rgba(59, 42, 4, 0.25);
+    color: #744c01;
+    font-weight: bold;
+    font-size: large;
+}
+
+button:hover {
+    background-color: #fccd35;
+    cursor: pointer;
+}
+
+button:active {
+    transform: translateY(3px);
+    box-shadow: 0 1px 0 #aaa;
+}
