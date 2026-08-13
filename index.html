@@ -4,10 +4,132 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="style.css" />
-        <title>해동</title>
+        <title>마를렌 - 버츄얼 아바타 제작</title>
+        <style>
+            /* 좌우 스크롤바 디자인 및 양옆 투명 그라데이션 페이드 효과 */
+            .portfolio-wrapper {
+                position: relative;
+                width: 100%;
+                overflow: hidden;
+                -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+                mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+            }
+
+            .portfolio-slider {
+                display: flex;
+                flex-direction: row;
+                gap: 20px;
+                overflow-x: auto;
+                padding: 25px calc(50% - 180px) 45px calc(50% - 180px); 
+                scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch;
+                scroll-behavior: smooth;
+            }
+
+            .portfolio-slider::-webkit-scrollbar {
+                height: 12px; 
+            }
+            .portfolio-slider::-webkit-scrollbar-track {
+                background: rgba(184, 151, 104, 0.15);
+                border-radius: 6px;
+            }
+            .portfolio-slider::-webkit-scrollbar-thumb {
+                background-color: #b89768;
+                border-radius: 6px;
+            }
+            .portfolio-slider::-webkit-scrollbar-thumb:hover {
+                background-color: #9a7b4f;
+            }
+
+            /* 🎀 피크닉/카페 감성에 맞춘 귀엽고 깔끔한 텍스트 박스 */
+            .input-box input[type="text"],
+            .input-box textarea {
+                width: 100%;
+                background-color: #faf6f0; /* 따뜻한 크림/베이지 톤 */
+                border: 1.5px solid #e6d7c3; /* 부드러운 테두리 색상 */
+                border-radius: 12px; /* 둥글둥글 귀여운 모서리 */
+                padding: 12px 15px;
+                font-family: inherit;
+                font-size: 14px;
+                color: #555;
+                outline: none;
+                box-sizing: border-box;
+                transition: all 0.25s ease;
+            }
+
+            .input-box input[type="text"]:focus,
+            .input-box textarea:focus {
+                background-color: #fff;
+                border-color: #b89768;
+                box-shadow: 0 0 0 3px rgba(184, 151, 104, 0.15);
+            }
+
+            /* 4번 요청사항: 입력 박스 안의 텍스트(placeholder) 색상을 노란색 계열(#d4af37 또는 #f0ad4e 등)으로 수정 */
+            .input-box input::placeholder,
+            .input-box textarea::placeholder {
+                color: #e0ac2b; /* 눈에 잘 띄는 진한 노란/골드 계열 */
+                opacity: 1;
+            }
+
+            /* 🎀 문의 양식 전용 완벽 좌측 정렬 및 계층 구조 클래스 */
+            .form-wrapper {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                text-align: left;
+                margin-top: 20px;
+                box-sizing: border-box;
+            }
+            .form-group {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                margin-bottom: 25px;
+            }
+            /* 하위 항목 전용 들여쓰기 박스 */
+            .form-sub-container {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                padding-left: 20px; /* 하위 항목들에 들여쓰기 부여 */
+                box-sizing: border-box;
+                margin-top: 8px;
+                border-left: 2.5px solid #e6d7c3; /* 피크닉 감성의 예쁜 세로 선 추가 */
+            }
+            .form-sub-group {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: 6px;
+            }
+            .form-title {
+                font-weight: 700;
+                color: #333;
+                font-size: 15px;
+            }
+            .form-sub-title {
+                font-weight: 600;
+                color: #555;
+                font-size: 14px;
+            }
+            
+            /* 1, 2번 요청사항 반영: 기존 13px에서 form-title과 동일한 15px로 키우고, 색상 변경용 클래스(.custom-desc-color) 추가 */
+            .form-desc {
+                font-size: 15px; 
+                color: #888; /* 기본 색상 */
+                line-height: 1.4;
+            }
+            .custom-desc-color {
+                color: #d4af37; /* 원하는 텍스트 색상으로 변경 가능 (예: 골드/노란 계열) */
+            }
+        </style>
     </head>
-    <body style="height: auto">
+    <body style="height: auto;">
         <div class="page-wrap">
+            <!-- 어닝 영역 -->
             <div class="awning">
                 <div class="awning-item"></div>
                 <div class="awning-item"></div>
@@ -25,446 +147,285 @@
                 <div class="awning-item"></div>
                 <div class="awning-item"></div>
             </div>
-            <section id="sec-content">
-                <div>
-                    <h3>MARLENE</h3>
-                </div>
-                <div>
-                    <span
-                        class="content-span"
-                        onclick="location.href = '#sec-booking'"
-                        >예약 현황</span
-                    >
-                    <span
-                        class="content-span"
-                        onclick="location.href = '#sec-introdution'"
-                        >작가 소개</span
-                    >
-                    <span
-                        class="content-span"
-                        onclick="location.href = '#sec-price'"
-                        >가격표</span
-                    >
-                    <span
-                        class="content-span"
-                        onclick="location.href = '#sec-work'"
-                        >작업 순서</span
-                    >
-                    <span
-                        class="content-span"
-                        onclick="location.href = '#sec-portfolio'"
-                        >포트폴리오</span
-                    >
-                    <span
-                        class="content-span"
-                        onclick="location.href = '#sec-caution'"
-                        >주의사항</span
-                    >
-                    <span
-                        class="content-span"
-                        onclick="location.href = '#sec-form'"
-                        >문의양식</span
-                    >
-                </div>
-            </section>
-            <section id="sec-booking">
-                <div
-                    style="
-                        display: flex;
-                        flex-direction: row;
-                        align-items: center;
-                    "
-                ></div>
+
+            <!-- 예약 현황 영역 -->
+            <section id="sec-booking" style="margin-top: 30px;">
                 <div class="box">
                     <h2 class="title">예약 현황</h2>
-                    <div
-                        style="
-                            display: flex;
-                            align-items: center;
-                            gap: 60px;
-                            padding-top: 20px;
-                        "
-                    >
-                        <div
-                            style="
-                                display: flex;
-                                flex-direction: column;
-                                gap: 5px;
-                                align-items: center;
-                            "
-                        >
-                            <span style="font-weight: bold; font-size: large"
-                                >N월</span
-                            >
-                            <div
-                                style="
-                                    display: flex;
-                                    flex-direction: row;
-                                    align-items: center;
-                                "
-                            >
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 25px; padding-top: 20px;">
+                        <div style="display: flex; flex-direction: column; gap: 8px; align-items: center;">
+                            <span style="font-weight: bold; font-size: large;">N월</span>
+                            <div style="display: flex; flex-direction: row; align-items: center; gap: 8px;">
                                 <span class="blank-slot"></span>
                                 <span class="blank-slot"></span>
                             </div>
                         </div>
-                        <div
-                            style="
-                                display: flex;
-                                flex-direction: column;
-                                gap: 5px;
-                                align-items: center;
-                            "
-                        >
-                            <span style="font-weight: bold; font-size: large"
-                                >N+1월</span
-                            >
-                            <div
-                                style="
-                                    display: flex;
-                                    flex-direction: row;
-                                    align-items: center;
-                                "
-                            >
-                                <span class="full-slot"></span>
-                                <span class="full-slot"></span>
+                        <div style="display: flex; flex-direction: column; gap: 8px; align-items: center;">
+                            <span style="font-weight: bold; font-size: large;">N+1월</span>
+                            <div style="display: flex; flex-direction: row; align-items: center; gap: 8px;">
+                                <span class="blank-slot"></span>
+                                <span class="blank-slot"></span>
                             </div>
                         </div>
-                        <div
-                            style="
-                                display: flex;
-                                flex-direction: column;
-                                align-items: center;
-                                gap: 10px;
-                            "
-                        >
-                            <div
-                                style="
-                                    display: flex;
-                                    flex-direction: row;
-                                    align-items: center;
-                                "
-                            >
+                        <div style="display: flex; flex-direction: row; align-items: center; gap: 15px; font-size: 15px;">
+                            <div style="display: flex; flex-direction: row; align-items: center; gap: 4px;">
                                 <span class="blank-slot"></span>
-                                <span>&nbsp;- 빈 슬롯</span>
+                                <span>- 빈 슬롯</span>
                             </div>
-                            <div
-                                style="
-                                    display: flex;
-                                    flex-direction: row;
-                                    align-items: center;
-                                "
-                            >
+                            <span>/</span>
+                            <div style="display: flex; flex-direction: row; align-items: center; gap: 4px;">
                                 <span class="full-slot"></span>
-                                <span>&nbsp;- 찬 슬롯</span>
+                                <span>- 찬 슬롯</span>
                             </div>
                         </div>
                     </div>
-                    <span
-                        style="
-                            font-size: 16px;
-                            padding-top: 20px;
-                            padding-bottom: 20px;
-                        "
-                        >(예약은 입금순으로 진행됩니다.)</span
-                    >
+                    <span style="font-size: 16px; padding: 20px 0; display: inline-block; text-align: center; width: 100%;">
+                        (예약은 입금순으로 진행됩니다.)
+                    </span>
                 </div>
             </section>
+
+            <!-- 작가 소개 영역 -->
             <section id="sec-introdution">
-                <div
-                    style="
-                        display: flex;
-                        flex-direction: row;
-                        align-items: center;
-                    "
-                ></div>
                 <div class="box">
                     <h2 class="title">작가 소개</h2>
-                    <div
-                        style="
-                            padding-top: 20px;
-                            padding-bottom: 20px;
-                            text-align: center;
-                        "
-                    >
-                        안녕하세요:) 이제 막 버츄얼 작업계에 발을 들이게 된 작가
-                        마를렌이라고 합니다.<br />
-                        원화부터 모델링까지 한 번에, 합리적인 가격으로 제작해
-                        드립니다.<br />
-                        만족스러운 결과물을 위해 정성을 다해 작업해드려요
+                    <div style="padding: 20px 0; text-align: center; line-height: 1.6;">
+                        안녕하세요:) 이제 막 버츄얼 작업계에 발을 들이게 된 작가 마를렌이라고 합니다.<br />
+                        원화부터 모델링까지 한 번에, 합리적인 가격으로 제작해 드립니다.<br />
+                        만족스러운 결과물을 위해 정성을 다해 작업해드려요 (❁´◡`❁)
                     </div>
                 </div>
             </section>
+
+            <!-- 가격표 영역 -->
             <section id="sec-price">
                 <div class="box">
                     <h2 class="title">가격표</h2>
                     <p>(가격표 수정 후 첨부)</p>
                 </div>
             </section>
+
+            <!-- 작업 순서 영역 -->
             <section id="sec-work">
                 <div class="box">
                     <h2 class="title">작업 순서</h2>
                     <p>(작업 순서 첨부)</p>
-                    <h3>전달 파일</h3>
+                    <h3>[전달 파일]</h3>
                     <p>
-                        FBX, VRM(Mtoon), VSF(Liltoon), or Warudo(Liltoon),
-                        유니티 패키지 중<br />
-                        의뢰자가 요청하는 파일 별도의 추가비용 없이 제공
+                        VSF or Warudo 중 택 1, FBX, VRM, 유니티 패키지 중 의뢰자가 요청하는 파일 별도의 추가비용 없이 제공
                     </p>
                 </div>
             </section>
+
+            <!-- 포트폴리오 영역 -->
             <section id="sec-portfolio">
                 <div class="box">
                     <h2 class="title">포트폴리오</h2>
+                    
+                    <div class="portfolio-tabs" style="display: flex; justify-content: center; gap: 8px; margin: 20px 0; flex-wrap: wrap;">
+                        <button class="tab-btn active" onclick="filterPortfolio('all', this)" style="width: auto; padding: 8px 16px; border: 1px solid #b89768; background: #b89768; color: #fff; border-radius: 20px; cursor: pointer;">전체</button>
+                        <button class="tab-btn" onclick="filterPortfolio('original', this)" style="width: auto; padding: 8px 16px; border: 1px solid #b89768; background: #fff; color: #b89768; border-radius: 20px; cursor: pointer;">오리지널헤드</button>
+                        <button class="tab-btn" onclick="filterPortfolio('facial', this)" style="width: auto; padding: 8px 16px; border: 1px solid #b89768; background: #fff; color: #b89768; border-radius: 20px; cursor: pointer;">페이셜</button>
+                        <button class="tab-btn" onclick="filterPortfolio('special', this)" style="width: auto; padding: 8px 16px; border: 1px solid #b89768; background: #fff; color: #b89768; border-radius: 20px; cursor: pointer;">특수표정</button>
+                        <button class="tab-btn" onclick="filterPortfolio('custom', this)" style="width: auto; padding: 8px 16px; border: 1px solid #b89768; background: #fff; color: #b89768; border-radius: 20px; cursor: pointer;">뚜따</button>
+                    </div>
+
+                    <div class="portfolio-wrapper">
+                        <div class="portfolio-slider" id="portfolioSlider">
+                            <div class="portfolio-item original" style="flex: 0 0 360px; width: 360px; height: 360px; scroll-snap-align: center; background: #faf6f0; border-radius: 8px; overflow: hidden; border: 1px solid #e6d7c3; display: flex; align-items: center; justify-content: center; text-align: center;">
+                                <div style="color: #777;">[오리지널헤드 이미지]</div>
+                            </div>
+                            <div class="portfolio-item facial" style="flex: 0 0 360px; width: 360px; height: 360px; scroll-snap-align: center; background: #faf6f0; border-radius: 8px; overflow: hidden; border: 1px solid #e6d7c3; display: flex; align-items: center; justify-content: center; text-align: center;">
+                                <div style="color: #777;">[페이셜 GIF]</div>
+                            </div>
+                            <div class="portfolio-item special" style="flex: 0 0 360px; width: 360px; height: 360px; scroll-snap-align: center; background: #faf6f0; border-radius: 8px; overflow: hidden; border: 1px solid #e6d7c3; display: flex; align-items: center; justify-content: center; text-align: center;">
+                                <div style="color: #777;">[특수표정 GIF]</div>
+                            </div>
+                            <div class="portfolio-item custom" style="flex: 0 0 360px; width: 360px; height: 360px; scroll-snap-align: center; background: #faf6f0; border-radius: 8px; overflow: hidden; border: 1px solid #e6d7c3; display: flex; align-items: center; justify-content: center; text-align: center;">
+                                <div style="color: #777;">[뚜따 이미지]</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
+
+            <!-- 주의사항 영역 -->
             <section id="sec-caution">
                 <div class="box">
                     <h2 class="title">주의사항</h2>
                     <p>(주의사항 수정 후 첨부)</p>
                 </div>
             </section>
-            <section id="sec-form">
-                <div class="box">
-                    <h2 class="title">문의 양식</h2>
-                    <div
-                        style="
-                            display: flex;
-                            flex-direction: column;
-                            margin-top: 15px;
-                        "
-                    >
-                        <span
-                            >※ 노란색 글을 참고하여 원하시는 대로
-                            작성해주세요.</span
-                        >
-                        <span
-                            >※ 버츄얼 관련 용어가 처음이시고 낯설어 아래 문의
-                            양식을 채울 수 없으시다면 문의글 남겨주세요.
-                        </span>
-                        <span>차근차근 상담하며 도와드리겠습니다 :)</span>
-                    </div>
-                    <br />
-                    <div
-                        class="input-box"
-                        style="display: flex; flex-direction: column"
-                    >
-                        <span class="input-span"
-                            >1) 주의사항 확인하셨나요?</span
-                        >
-                        <label
-                            ><input
-                                type="checkbox"
-                                id="agree"
-                            />확인했습니다</label
-                        >
-                        <br />
-                        <span class="input-span"
-                            >2) 방송 닉네임 및 주 플랫폼 방송 링크를
-                            첨부해주세요. (데뷔 예정일 경우 닉네임만 기재)</span
-                        >
-                        <span
-                            >※ 방송 다시보기를 통해 의뢰자의 목소리를 참고하여
-                            작업합니다</span
-                        >
-                        <input
-                            type="text"
-                            id="nickname"
-                            placeholder="홍길동, soop or 치지직"
-                            class="input-example"
-                        />
-                        <br />
-                        <span class="input-span">3) 주문 사항</span>
-                        <span
-                            >※ 가격표 참고해서 원하시는 항목을
-                            작성해주세요.</span
-                        >
-                        <textarea
-                            id="order-note"
-                            placeholder="오리지널 헤드 원화 디자인 + 오리지널 헤드 SET&#10;오리지널 헤드 + Booth 아바타 바디 결합&#10;.&#10;.&#10;.&#10;등등"
-                            class="input-example"
-                            style="height: 100px"
-                        ></textarea>
-                        <br />
-                        <span class="input-span"
-                            >4) 아바타 설정 및 참고자료</span
-                        >
-                        <span
-                            >※ 헤드 원화에 포함된 렌즈 디자인은 작가 재량으로
-                            제작됩니다.
-                        </span>
-                        <span
-                            >※ 타작가님께서 디자인 하신 렌즈(타작가님 허가
-                            필요)나 booth 렌즈 사용(사용 가능 범위 확인 필요)을
-                            원하시는 경우, 렌즈 이미지를 전달해주세요. 렌즈만
-                            교체해 드립니다.
-                        </span>
-                        <div class="avatar-set">
-                            <br />
-                            <span class="input-span">4-1) 동공 색상</span>
-                            <input
-                                type="text"
-                                id="eye-color"
-                                placeholder="노란색 or 작가 재량(작가가 알아서 진행)"
-                                class="input-example"
-                            />
-                            <br />
-                            <span class="input-span">4-2) 참고 자료</span>
-                            <span>※ 방송 다시보기가 없는 분들은 필수 </span>
-                            <span>
-                                ※ 이미지나 본인 목소리가 담긴 녹음 샘플이 있으면
-                                헤드 원화 디자인에 용이함
-                            </span>
-                            <span style="color: red"
-                                >※ 타작가님의 작업물, 타버튜버분의 사진을
-                                참고자료에 첨부하지 말아주세요. 첨부시 의뢰가
-                                거절됩니다.
-                            </span>
-                            <input
-                                type="text"
-                                id="reference"
-                                placeholder="이미지 or 목소리 녹음 샘플 첨부(둘 다 첨부 가능)"
-                                class="input-example"
-                            />
-                            <br />
-                            <span class="input-span">4-3) 캐릭터 설정</span>
-                            <span>
-                                ※ 본인 캐릭터에 담아내면 좋을 키워드(분위기,
-                                성격 등)를 적어주세요.</span
-                            >
-                            <span
-                                >※ 상담 진행하며 작가 본인이 작업가능한 선 +
-                                의뢰자가 원하는 선 적절히 절충해 나갈
-                                예정입니다.</span
-                            >
-                            <input
-                                type="text"
-                                id="character"
-                                placeholder="차분함, 귀여움, 강아지상, 고양이 입 등등 or 작가 재량"
-                                class="input-example"
-                            />
-                            <br />
-                            <span class="input-span"
-                                >4-4) 바디 합성 시 사용할 아바타</span
-                            >
-                            <input
-                                type="text"
-                                id="avata-reference"
-                                placeholder="원하시는 아바타 링크를 첨부해주세요 or 작가 재량"
-                                class="input-example"
-                            />
-                        </div>
-                        <br />
-                        <span class="input-span"
-                            >5) 뚜따 Booth 아이템 (아바타에 입힐 헤어와 의상 등)
-                            링크 첨부</span
-                        >
-                        <span
-                            >※ 비전용 의상은 아바타 바디, 의상마다 난이도가
-                            상이해 소요기간이 유동적이므로 작업하지
-                            않습니다.</span
-                        >
-                        <span style="color: red"
-                            >※ 해당 상품들의 사용범위, 라이센스들을 꼼꼼히
-                            살펴보시고 첨부해주세요. 추후 문제 발생시 작가가
-                            아닌 본인에게 책임이 있음을 명심해주세요.
-                        </span>
-                        <span
-                            >※ 최초 의뢰시 최대 헤어 3개, 의상 3개 (총 6개)
-                            이하만 가능</span
-                        >
-                        <div class="booth-item-set">
-                            <br />
-                            <span class="input-span">5-1) 헤어 링크</span>
-                            <span
-                                >※ 헤어 복잡도에 따라 뚜따 비용이 상이합니다.
-                                (상 : 2만/ 중 : 1.4만/ 하 : 1만)</span
-                            >
-                            <input
-                                type="text"
-                                id="hair-link"
-                                placeholder="링크 첨부"
-                                class="input-example"
-                            />
-                            <br />
-                            <span class="input-span">5-2) 헤어 색상</span>
-                            <span
-                                >※ 색 변경 난이도에 따라 비용이 상이합니다. (상
-                                : n만/ 중 : n만/ 하 : n만)</span
-                            >
-                            <textarea
-                                id="hair-color"
-                                placeholder=" 금발(색상코드) or 투톤(두가지 색상) or 브릿지(기본 색상+브릿지 색상)"
-                                class="input-example"
-                                style="height: 40px"
-                            ></textarea>
-                            <br />
-                            <span class="input-span">5-3) 의상 링크</span>
-                            <span>
-                                ※ 의상 복잡도에 따라 뚜따 비용이 상이합니다. (상
-                                : n만/ 중 : n만/ 하 : n만)</span
-                            >
-                            <input
-                                type="text"
-                                id="clothes-link"
-                                placeholder="링크 첨부"
-                                class="input-example"
-                            />
-                            <br />
-                            <span class="input-span">5-4) 의상 색상</span>
-                            <span>
-                                ※ 의상 색상의 경우, 상품의 썸네일을 보시고
-                                원하는 파츠의 색상을 알려주세요. (교복 의상의
-                                경우 리본=빨간색/ 와이셔츠색=흰색/ 치마=남색/
-                                신발=갈색)</span
-                            >
-                            <span>
-                                ※ 색 변경 난이도에 따라 비용이 상이합니다. (상 :
-                                n만/ 중 : n만/ 하 : n만) 파츠별 색상</span
-                            >
-                            <textarea
-                                id="clothes-color"
-                                placeholder="파츠별 색상"
-                                class="input-example"
-                                style="height: 40px"
-                            ></textarea>
-                        </div>
-                        <br />
-                        <span class="input-span">6) 포트폴리오 공개 여부</span>
-                        <span>
-                            ※ 완성된 모든 작업물은 포트폴리오로 사용될 수
-                            있습니다.
-                        </span>
-                        <span>
-                            ※ 희망하지 않으신 분은 미리 말씀해주세요.
-                            (포트폴리오 비공개시 추가금 +5만)</span
-                        >
-                        <label>
-                            <input type="radio" name="publicness" value="1" />예
-                        </label>
-                        <label>
-                            <input
-                                type="radio"
-                                name="publicness"
-                                value="2"
-                            />아니오
-                        </label>
-                        <br />
-                        <span class="input-span">7) 최종 전달 파일 선택</span>
-                        ※ 다음 중 원하시는 파일을 작성해주세요. 최종 파일 전달시
-                        같이 전달드리며, 별도의 추가금 없이 제공해드립니다.
-                        <input
-                            type="text"
-                            id="final-file"
-                            placeholder="VSF or Warudo 중 1개, FBX, VRM, 유니티 패키지 중 선택 (다중 선택 가능)"
-                            class="input-example"
-                        />
 
-                        <button onclick="copyText()" style="margin-top: 20px">
+            <!-- 문의 양식 영역 -->
+            <section id="sec-form">
+                <div class="box" style="display: flex; flex-direction: column; align-items: flex-start; text-align: left; padding: 40px;">
+                    <h2 class="title" style="align-self: center; margin: 0 auto;">문의 양식</h2>
+                    
+                    <div style="display: flex; flex-direction: column; margin-top: 15px; gap: 5px; text-align: left; width: 100%;">
+                        <span class="form-desc custom-desc-color">※ 노란색 글을 참고하여 원하시는 대로 작성해주세요.</span>
+                        <span class="form-desc custom-desc-color">※ 버츄얼 용어가 처음이시라면 문의글 남겨주세요. 차근차근 상담해 드립니다 :)</span>
+                    </div>
+                    
+                    <div class="input-box form-wrapper">
+                        
+                        <!-- 1번 문항 -->
+                        <div class="form-group">
+                            <span class="form-title">1) 주의사항 확인하셨나요?</span>
+                            <label style="cursor: pointer; display: flex; align-items: center; gap: 8px;">
+                                <input type="radio" id="agree" name="agreement" value="yes" /> 확인했습니다
+                            </label>
+                        </div>
+
+                        <!-- 2번 문항 -->
+                        <div class="form-group">
+                            <span class="form-title">2) 방송 닉네임 및 주 플랫폼 방송 링크를 첨부해주세요. (데뷔 예정일 경우 닉네임만 기재)</span>
+                            <input type="text" id="nickname" placeholder="홍길동, soop or 치지직 링크" />
+                        </div>
+
+                        <!-- 3번 문항 -->
+                        <div class="form-group">
+                            <span class="form-title">3) 주문 사항</span>
+                            <span class="form-desc custom-desc-color">※ 가격표 참고해서 원하시는 항목을 작성해주세요.<br></span>
+                            <textarea id="order-note" placeholder="주문하고자 하는 항목을 자유롭게 적어주세요." style="height: 100px; resize: vertical;"></textarea>
+                        </div>
+
+                        <!-- 4번 문항 세트 -->
+                        <div class="form-group">
+                            <span class="form-title">4) 아바타 설정 및 참고자료</span>
+                            <span class="form-desc custom-desc-color">
+                                ※ 헤드 원화에 포함된 렌즈 디자인은 작가 재량으로 제작됩니다.<br>
+                                ※ 타작가님께서 디자인 하신 렌즈(타작가님 허가 필요)나 booth 렌즈 사용을 원하시는 경우 렌즈 이미지를 전달해주세요. (렌즈만 교체해 드립니다.)
+                            </span>
+                            
+                            <div class="form-sub-container">
+                                <div class="form-sub-group">
+                                    <span class="form-sub-title">4-1) 동공 색상</span>
+                                    <input type="text" id="eye-color" placeholder="노란색 or 작가 재량" />
+                                </div>
+                                
+                                <div class="form-sub-group">
+                                    <span class="form-sub-title">4-2) 참고 자료</span>
+                                    <span class="form-desc custom-desc-color">
+                                        ※ 방송 다시보기가 없는 분들은 필수<br>
+                                        ※ 이미지 첨부시 헤드 원화 디자인에 용이합니다.<br>
+                                        ※ 타작가님의 작업물, 타버튜버분의 사진은 첨부하지 말아주세요. (첨부시 의뢰가 거절 됩니다)
+                                    </span>
+                                    <input type="text" id="reference" placeholder="이미지 첨부" />
+                                </div>
+                                
+                                <div class="form-sub-group">
+                                    <span class="form-sub-title">4-3) 캐릭터 설정</span>
+                                    <span class="form-desc custom-desc-color">
+                                        ※ 본인 캐릭터에 담아내면 좋을 키워드(분위기, 성격 등)를 적어주세요.<br>
+                                        ※ 상담 진행하며 작가가 작업가능한 선 + 의뢰자가 원하는 선 적절히 절충할 예정입니다.
+                                    </span>
+                                    <input type="text" id="character" placeholder="차분함, 귀여움, 강아지상 등등 or 작가 재량" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 5번 문항 세트 (3번 요청사항 반영: 5-1이 따로 떨어져 있던 구조를 통일된 form-sub-container 안으로 통합) -->
+                        <div class="form-group">
+                            <span class="form-title">5) 뚜따 Booth 아이템(아바타에 입힐 헤어와 의상 등) 링크 첨부</span>
+                            <span class="form-desc custom-desc-color">
+                                ※ 해당 상품들의 사용범위, 라이센스들을 꼼꼼히 살펴보시고 첨부해주세요.<br> (추후 문제 발생 시 작가가 아닌 의뢰자에게 책임이 있음을 명심해주세요.)
+                            </span>
+
+                            <div class="form-sub-container">
+                                <div class="form-sub-group">
+                                    <span class="form-sub-title">5-1) 바디 합성 시 사용할 아바타</span>
+                                    <span class="form-desc custom-desc-color">
+                                        ※ 전용 의상이 적은 아바타일 경우 작가가 아바타 변경을 권유할 수 있습니다.<br>
+                                        ※ 작가가 보유하지 않은 아바타는 선물해주셔야 하며, 아바타 선물에 사용된 금액은 환불 불가
+                                    </span>
+                                    <input type="text" id="avata-reference" placeholder="원하시는 아바타 링크 첨부 or 작가 재량" />
+                                </div>
+                            
+                                <div class="form-sub-group">
+                                    <span class="form-sub-title">5-2) 헤어 링크</span>
+                                    <span class="form-desc custom-desc-color">※ 개수 제한 최대 3개<br>※ 헤어의 물리적용 파츠 개수에 따라 뚜따 비용이 상이합니다.</span>
+                                    <input type="text" id="hair-link" placeholder="헤어 Booth 링크 첨부" />
+                                </div>
+
+                                <div class="form-sub-group">
+                                    <span class="form-sub-title">5-3) 헤어 색상</span>
+                                    <span class="form-desc custom-desc-color">※ 헤어의 염색 종류에 따라 비용이 상이합니다.</span>
+                                    <input type="text" id="hair-color" placeholder="금발(색상코드) or 투톤(두가지 색상) or 브릿지 등" />
+                                </div>
+                                
+                                <div class="form-sub-group">
+                                    <span class="form-sub-title">5-4) 의상 링크</span>
+                                    <span class="form-desc custom-desc-color">※ 개수 제한 최대 3개<br>※ 비전용 의상은 아바타 바디, 의상마다 소요기간이 유동적이므로 작업하지 않습니다.<br>※ 의상의 물리적용 파츠 개수에 따라 뚜따 비용이 상이합니다.</span>
+                                    <input type="text" id="clothes-link" placeholder="의상 Booth 링크 첨부" />
+                                </div>
+                                
+                                <div class="form-sub-group">
+                                    <span class="form-sub-title">5-5) 의상 색상</span>
+                                    <span class="form-desc custom-desc-color">
+                                        ※ 상품의 썸네일을 보시고 원하는 파츠의 색상을 알려주세요.<br> (ex. 리본=빨강 / 와이셔츠=흰색 / 치마=남색 / 신발=갈색)<br>
+                                        ※ 의상의 색 변경 파츠 개수에 따라 비용이 상이합니다.
+                                    </span>
+                                    <textarea id="clothes-color" placeholder="파츠별 원하는 색상 입력" style="height: 60px; resize: vertical;"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 6번 문항 -->
+                        <div class="form-group">
+                            <span class="form-title">6) 포트폴리오 공개 여부</span>
+                            <span class="form-desc custom-desc-color">
+                                ※ 완성된 모든 작업물은 포트폴리오로 사용될 수 있습니다.<br>
+                                ※ 희망하지 않으신 분은 미리 말씀해주세요. (포트폴리오 비공개시 추가금 발생)
+                            </span>
+                            <div style="display: flex; gap: 20px; margin-top: 5px;">
+                                <label style="cursor: pointer; display: flex; align-items: center; gap: 8px;">
+                                    <input type="radio" name="publicness" value="1" /> 예
+                                </label>
+                                <label style="cursor: pointer; display: flex; align-items: center; gap: 8px;">
+                                    <input type="radio" name="publicness" value="2" /> 아니오
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- 7번 문항 -->
+                        <div class="form-group">
+                            <span class="form-title">7) 최종 전달 파일 선택</span>
+                            <span class="form-desc custom-desc-color">※ 다음 중 원하시는 파일을 작성해주세요. 최종 파일 전달시 같이 전달드리며, 별도의 추가금 없이 제공해드립니다.</span>
+                            <input type="text" id="final-file" placeholder="VSF, Warudo, FBX, VRM, 유니티 패키지 중 선택 (다중 선택 가능)" />
+                        </div>
+
+                        <!-- 복사 버튼 -->
+                        <button onclick="copyText()" style="width: 100%; margin-top: 15px; padding: 14px; cursor: pointer; background-color: #b89768; color: #fff; border: none; border-radius: 12px; font-weight: bold; font-size: 15px; transition: 0.2s;">
                             내용 전체 복사
                         </button>
                     </div>
                 </div>
             </section>
         </div>
+
+        <script>
+        function filterPortfolio(category, btn) {
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(b => {
+                b.style.background = '#fff';
+                b.style.color = '#b89768';
+            });
+            btn.style.background = '#b89768';
+            btn.style.color = '#fff';
+
+            const items = document.querySelectorAll('.portfolio-item');
+            items.forEach(item => {
+                if (category === 'all' || item.classList.contains(category)) {
+                    item.style.display = 'flex';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+
+            const slider = document.getElementById('portfolioSlider');
+            slider.scrollTo({ left: 0, behavior: 'smooth' });
+        }
+        </script>
     </body>
 </html>
