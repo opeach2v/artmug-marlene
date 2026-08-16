@@ -639,14 +639,17 @@
         <script>
         function filterPortfolio(category, btn) {
             const buttons = document.querySelectorAll('.tab-btn');
+
             buttons.forEach(b => {
                 b.style.background = '#fff';
                 b.style.color = '#b89768';
             });
+
             btn.style.background = '#b89768';
             btn.style.color = '#fff';
 
             const items = document.querySelectorAll('.portfolio-item');
+
             items.forEach(item => {
                 if (category === 'all' || item.classList.contains(category)) {
                     item.style.display = 'flex';
@@ -656,20 +659,39 @@
             });
 
             const slider = document.getElementById('portfolioSlider');
-            slider.scrollTo({ left: 0, behavior: 'smooth' });
+
+            if (slider) {
+                slider.scrollTo({
+                    left: 0,
+                    behavior: 'smooth'
+                });
+            }
         }
 
-        window.addEventListener('message', function(event) {
-            if (event.data && event.data.type === 'marlene-scroll') {
-                const target = document.getElementById(event.data.id);
 
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
+        /* 아트머그 메뉴에서 이동 요청을 받음 */
+        window.addEventListener('message', function(event) {
+
+            if (!event.data || event.data.type !== 'marlene-scroll') {
+                return;
             }
+
+            const target = document.getElementById(event.data.id);
+
+            if (!target) {
+                return;
+            }
+
+            /* 해당 영역의 iframe 내부 위치 계산 */
+            const rect = target.getBoundingClientRect();
+
+            /* 아트머그 부모 페이지로 위치 전달 */
+            window.parent.postMessage({
+                type: 'marlene-scroll-position',
+                id: event.data.id,
+                top: rect.top + window.scrollY
+            }, '*');
+
         });
         </script>
     </body>
