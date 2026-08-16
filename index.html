@@ -439,7 +439,6 @@
             <section id="sec-portfolio">
                 <div class="box">
                     <h2 class="title">포트폴리오</h2>
-                    
                     <div class="portfolio-tabs" style="display: flex; justify-content: center; gap: 8px; margin: 20px 0; flex-wrap: wrap;">
                         <button class="tab-btn active" onclick="filterPortfolio('all', this)" style="width: auto; padding: 8px 16px; border: 1px solid #b89768; background: #b89768; color: #fff; border-radius: 20px; cursor: pointer;">전체</button>
                         <button class="tab-btn" onclick="filterPortfolio('original', this)" style="width: auto; padding: 8px 16px; border: 1px solid #b89768; background: #fff; color: #b89768; border-radius: 20px; cursor: pointer;">오리지널헤드</button>
@@ -447,19 +446,21 @@
                         <button class="tab-btn" onclick="filterPortfolio('special', this)" style="width: auto; padding: 8px 16px; border: 1px solid #b89768; background: #fff; color: #b89768; border-radius: 20px; cursor: pointer;">특수표정</button>
                         <button class="tab-btn" onclick="filterPortfolio('custom', this)" style="width: auto; padding: 8px 16px; border: 1px solid #b89768; background: #fff; color: #b89768; border-radius: 20px; cursor: pointer;">뚜따</button>
                     </div>
-
+                    <p style="text-align: center; color: #3f280c; font-size: 14px; margin: 10px 0 12px;">
+                        ＊ 위로 갈수록 최근 작업입니다. (우측 슬라이드바 이용)
+                    </p>
                     <div class="portfolio-wrapper">
                         <div class="portfolio-slider" id="portfolioSlider">
-                            <div class="portfolio-item original" style="flex: 0 0 360px; width: 360px; height: 360px; scroll-snap-align: center; background: #faf6f0; border-radius: 8px; overflow: hidden; border: 1px solid #e6d7c3; display: flex; align-items: center; justify-content: center; text-align: center;">
+                            <div class="portfolio-item original" style="flex: 0 0 400px; width: 400px; height: 400px; scroll-snap-align: center; background: #faf6f0; border-radius: 8px; overflow: hidden; border: 1px solid #e6d7c3; display: flex; align-items: center; justify-content: center; text-align: center;">
                                 <div style="color: #777;">[오리지널헤드 이미지]</div>
                             </div>
-                            <div class="portfolio-item facial" style="flex: 0 0 360px; width: 360px; height: 360px; scroll-snap-align: center; background: #faf6f0; border-radius: 8px; overflow: hidden; border: 1px solid #e6d7c3; display: flex; align-items: center; justify-content: center; text-align: center;">
+                            <div class="portfolio-item facial" style="flex: 0 0 400px; width: 400px; height: 400px; scroll-snap-align: center; background: #faf6f0; border-radius: 8px; overflow: hidden; border: 1px solid #e6d7c3; display: flex; align-items: center; justify-content: center; text-align: center;">
                                 <div style="color: #777;">[페이셜 GIF]</div>
                             </div>
-                            <div class="portfolio-item special" style="flex: 0 0 360px; width: 360px; height: 360px; scroll-snap-align: center; background: #faf6f0; border-radius: 8px; overflow: hidden; border: 1px solid #e6d7c3; display: flex; align-items: center; justify-content: center; text-align: center;">
+                            <div class="portfolio-item special" style="flex: 0 0 400px; width: 400px; height: 400px; scroll-snap-align: center; background: #faf6f0; border-radius: 8px; overflow: hidden; border: 1px solid #e6d7c3; display: flex; align-items: center; justify-content: center; text-align: center;">
                                 <div style="color: #777;">[특수표정 GIF]</div>
                             </div>
-                            <div class="portfolio-item custom" style="flex: 0 0 360px; width: 360px; height: 360px; scroll-snap-align: center; background: #faf6f0; border-radius: 8px; overflow: hidden; border: 1px solid #e6d7c3; display: flex; align-items: center; justify-content: center; text-align: center;">
+                            <div class="portfolio-item custom" style="flex: 0 0 400px; width: 400px; height: 400px; scroll-snap-align: center; background: #faf6f0; border-radius: 8px; overflow: hidden; border: 1px solid #e6d7c3; display: flex; align-items: center; justify-content: center; text-align: center;">
                                 <div style="color: #777;">[뚜따 이미지]</div>
                             </div>
                         </div>

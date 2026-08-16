@@ -213,3 +213,162 @@ button:active {
     transform: translateY(3px);
     box-shadow: 0 1px 0 #aaa;
 }
+
+/* ==================== 포트폴리오 세로 슬라이드 ==================== */
+
+.portfolio-wrapper {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+
+    /* 위아래가 자연스럽게 흐려지는 효과 */
+    -webkit-mask-image: linear-gradient(
+        to bottom,
+        transparent 0%,
+        black 0%,
+        black 90%,
+        transparent 100%
+    );
+    mask-image: linear-gradient(
+        to bottom,
+        transparent 0%,
+        black 0%,
+        black 90%,
+        transparent 100%
+    );
+}
+
+.portfolio-slider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    width: 100%;
+    height: 100%;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    padding: 25px 20px 45px;
+    box-sizing: border-box;
+
+    scroll-snap-type: y mandatory;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+}
+
+/* 세로 스크롤바 */
+.portfolio-slider::-webkit-scrollbar {
+    width: 12px;
+}
+
+.portfolio-slider::-webkit-scrollbar-track {
+    background: rgba(184, 151, 104, 0.15);
+    border-radius: 6px;
+}
+
+.portfolio-slider::-webkit-scrollbar-thumb {
+    background-color: #b89768;
+    border-radius: 6px;
+}
+
+.portfolio-slider::-webkit-scrollbar-thumb:hover {
+    background-color: #9a7b4f;
+}
+
+            /*피크닉/카페 감성에 맞춘 귀엽고 깔끔한 텍스트 박스 */
+.input-box input[type="text"],
+.input-box textarea {
+    width: 100%;
+    background-color: #faf6f0; /* 따뜻한 크림/베이지 톤 */
+    border: 1.5px solid #e6d7c3; /* 부드러운 테두리 색상 */
+    border-radius: 12px; /* 둥글둥글 귀여운 모서리 */
+    padding: 12px 15px;
+    font-family: inherit;
+    font-size: 14px;
+    color: #555;
+    outline: none;
+    box-sizing: border-box;
+    transition: all 0.25s ease;
+}
+
+.input-box input[type="text"]:focus,
+.input-box textarea:focus {
+    background-color: #fff;
+    border-color: #b89768;
+    box-shadow: 0 0 0 3px rgba(184, 151, 104, 0.15);
+}
+
+            /* 4번 요청사항: 입력 박스 안의 텍스트(placeholder) 색상을 노란색 계열(#d4af37 또는 #f0ad4e 등)으로 수정 */
+.input-box input::placeholder,
+.input-box textarea::placeholder {
+    color: #e0ac2b; /* 눈에 잘 띄는 진한 노란/골드 계열 */
+    opacity: 1;
+}
+
+/* 🎀 문의 양식 전용 완벽 좌측 정렬 및 계층 구조 클래스 */
+.form-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 20px;
+    box-sizing: border-box;
+}
+            
+.form-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 25px;
+}
+            
+/* 하위 항목 전용 들여쓰기 박스 */
+.form-sub-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-left: 20px; /* 하위 항목들에 들여쓰기 부여 */
+    box-sizing: border-box;
+    margin-top: 8px;
+    border-left: 2.5px solid #e6d7c3; /* 피크닉 감성의 예쁜 세로 선 추가 */
+}
+.form-sub-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.form-title {
+    font-weight: 700;
+    color: #333;
+    font-size: 15px;
+}
+.form-sub-title {
+    font-weight: 600;
+    color: #555;
+    font-size: 14px;
+}
+            
+/* 1, 2번 요청사항 반영: 기존 13px에서 form-title과 동일한 15px로 키우고, 색상 변경용 클래스(.custom-desc-color) 추가 */
+.form-desc {
+    font-size: 15px; 
+    color: #888; /* 기본 색상 */
+    line-height: 1.4;
+}
+.custom-desc-color {
+    color: #d4af37; /* 원하는 텍스트 색상으로 변경 가능 (예: 골드/노란 계열) */
+}
+
+.tutta-card {
+    display: flex;
+    flex-direction: column;
+}       
+
+.tutta-dye {
+    margin-top: auto;
+}
