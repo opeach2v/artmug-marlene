@@ -643,6 +643,7 @@
                 b.style.background = '#fff';
                 b.style.color = '#b89768';
             });
+
             btn.style.background = '#b89768';
             btn.style.color = '#fff';
 
@@ -658,19 +659,6 @@
             const slider = document.getElementById('portfolioSlider');
             slider.scrollTo({ left: 0, behavior: 'smooth' });
         }
-        /* 아트머그 커스텀 메뉴에서 받은 이동 명령 */
-        window.addEventListener('message', function(event) {
-            if (event.data && event.data.type === 'marlene-scroll') {
-                const target = document.getElementById(event.data.id);
-
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            }
-        });
         </script>
     </body>
 </html>
