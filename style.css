@@ -372,3 +372,337 @@ button:active {
 .tutta-dye {
     margin-top: auto;
 }
+
+/* =========================================
+   작업순서
+========================================= */
+
+.process-box {
+    overflow: hidden;
+}
+
+/* 전체 작업 흐름 */
+.process-flow {
+    width: 100%;
+    max-width: 900px;
+    margin: 45px auto 40px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.flow-step {
+    flex: 0 1 170px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.flow-number {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #fff8e9;
+    border: 2px solid #dfc27b;
+    color: #75543a;
+    font-size: 14px;
+    font-weight: 700;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 2;
+}
+
+.flow-step.active .flow-number {
+    background: #e6c56c;
+    border-color: #d4ae54;
+    box-shadow: 0 3px 0 #c9a354;
+}
+
+.flow-title {
+    margin-top: 13px;
+    color: #75543a;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.flow-line {
+    flex: 1;
+    max-width: 90px;
+    min-width: 30px;
+    height: 2px;
+    margin-top: 23px;
+    border-top: 2px dashed #dfc27b;
+}
+
+/* =========================================
+   03 작업 진행 큰 박스
+========================================= */
+
+.process-detail-box {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 28px 28px 32px;
+    box-sizing: border-box;
+    background: #f4e8d8;
+    border: 1px solid #d8bd9b;
+    border-radius: 24px;
+    position: relative;
+}
+
+.process-detail-box::before {
+    content: "✦";
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #e6c56c;
+    color: #fffaf0;
+    font-size: 14px;
+}
+
+/* 작업 진행 제목 */
+.detail-heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    margin-top: 4px;
+    margin-bottom: 30px;
+}
+
+.detail-heading span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 26px;
+    border-radius: 10px;
+    background: #ead39b;
+    color: #75543a;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.detail-heading h3 {
+    margin: 0;
+    color: #75543a;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+/* 설명 */
+.detail-description {
+    margin: 0 0 28px;
+    text-align: center;
+    color: #8a7057;
+    font-size: 14px;
+}
+
+/* =========================================
+   세부 작업 카드
+========================================= */
+
+.detail-flow {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    gap: 10px;
+}
+
+.detail-card {
+    flex: 1;
+    min-width: 0;
+    padding: 18px 12px 17px;
+    background: #fffaf2;
+    border: 1px solid #dfc9aa;
+    border-radius: 17px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* 작업명 */
+.detail-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 36px;
+    padding: 6px 8px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    background: #ead3a3;
+    color: #725238;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+/* 피드백 */
+.detail-info {
+    height: 34px;
+    margin-top: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.feedback {
+    display: inline-block;
+    padding: 5px 12px;
+    background: #E3EED8;
+    color: #71845B;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.detail-info.empty {
+    visibility: hidden;
+}
+
+/* 소요기간 */
+.detail-card p {
+    margin: 12px 0 0;
+    color: #917a63;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.detail-card p strong {
+    display: block;
+    margin-top: 3px;
+    color: #705038;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+/* 화살표 */
+.detail-arrow {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #c69b51;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+/* 작업 소요기간 안내 */
+.process-notice {
+    margin-top: 18px;
+    padding: 14px 20px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.8;
+    color: #7a654f;
+}
+
+.process-notice p {
+    margin: 0;
+}
+
+.process-notice p + p {
+    margin-top: 3px;
+}
+
+.process-notice strong {
+    font-weight: 700;
+}
+
+/* =========================================
+   모바일
+========================================= */
+
+@media (max-width: 700px) {
+    .process-flow {
+        margin-top: 35px;
+    }
+
+    .flow-step {
+        flex: 1;
+    }
+
+    .flow-number {
+        width: 40px;
+        height: 40px;
+        font-size: 14px;
+    }
+
+    .flow-line {
+        min-width: 10px;
+        margin-top: 19px;
+    }
+
+    .flow-title {
+        margin-top: 10px;
+        font-size: 14px;
+    }
+
+    .process-detail-box {
+        padding: 25px 10px 22px;
+        border-radius: 19px;
+    }
+
+    .detail-heading {
+        margin-bottom: 28px;
+    }
+
+    .detail-heading h3 {
+        font-size: 18px;
+    }
+
+    .detail-description {
+        font-size: 14px;
+        margin-bottom: 24px;
+    }
+
+    .detail-flow {
+        gap: 4px;
+    }
+
+    .detail-card {
+        padding: 12px 5px;
+        border-radius: 13px;
+    }
+
+    .detail-number {
+        min-height: 38px;
+        padding: 5px 4px;
+        font-size: 14px;
+    }
+
+    .detail-info {
+        margin-top: 12px;
+        height: 34px;
+    }
+
+    .feedback {
+        padding: 4px 5px;
+        font-size: 14px;
+    }
+
+    .detail-card p {
+        margin-top: 8px;
+        font-size: 14px;
+    }
+
+    .detail-card p strong {
+        font-size: 14px;
+    }
+
+    .detail-arrow {
+        font-size: 16px;
+    }
+}
