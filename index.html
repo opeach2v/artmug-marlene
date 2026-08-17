@@ -1144,13 +1144,13 @@
             if (!target) {
                 return;
             }
-            /* 해당 영역의 iframe 내부 위치 계산 */
-            const rect = target.getBoundingClientRect();
-            /* 아트머그 부모 페이지로 위치 전달 */
+            /* 현재 GitHub 페이지에서 목표 영역의 절대 위치*/
+            const targetTop = target.getBoundingClientRect().top + window.scrollY;
+            /*아트머그 부모 페이지로 목표 위치 전달*/
             window.parent.postMessage({
                 type: 'marlene-scroll-position',
                 id: event.data.id,
-                top: rect.top + window.scrollY
+                top: targetTop
             }, '*');
         });
         </script>
