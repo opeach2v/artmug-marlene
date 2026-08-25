@@ -27,6 +27,7 @@
                 <div class="awning-item"></div>
             </div>
             <!-- 예약 현황 영역 -->
+            <div id="copy-message">🗓️ 복사 완료!</div>
             <section id="sec-booking" style="margin-top: 30px;">
                 <div class="box">
                     <h2 class="title">예약 현황</h2>
@@ -1110,49 +1111,7 @@
                 </div>
             </section>
         </div>
-        <script>
-        function filterPortfolio(category, btn) {
-            const buttons = document.querySelectorAll('.tab-btn');
-            buttons.forEach(b => {
-                b.style.background = '#fff';
-                b.style.color = '#b89768';
-            });
-            btn.style.background = '#b89768';
-            btn.style.color = '#fff';
-            const items = document.querySelectorAll('.portfolio-item');
-            items.forEach(item => {
-                if (category === 'all' || item.classList.contains(category)) {
-                    item.style.display = 'flex';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-            const slider = document.getElementById('portfolioSlider');
-            if (slider) {
-                slider.scrollTo({
-                    left: 0,
-                    behavior: 'smooth'
-                });
-            }
-        }
-        /* 아트머그 메뉴에서 이동 요청을 받음 */
-        window.addEventListener('message', function(event) {
-            if (!event.data || event.data.type !== 'marlene-scroll') {
-                return;
-            }
-            const target = document.getElementById(event.data.id);
-            if (!target) {
-                return;
-            }
-            /* 현재 GitHub 페이지에서 목표 영역의 절대 위치*/
-            const targetTop = target.getBoundingClientRect().top + window.scrollY;
-            /*아트머그 부모 페이지로 목표 위치 전달*/
-            window.parent.postMessage({
-                type: 'marlene-scroll-position',
-                id: event.data.id,
-                top: targetTop
-            }, '*');
-        });
-        </script>
+
+        <script src="./script.js"></script>
     </body>
 </html>
