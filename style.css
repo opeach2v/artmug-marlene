@@ -156,7 +156,7 @@ section {
 .full-slot {
   width: 20px;
   height: 20px;
-  background: linear-gradient(135deg, #f3bd59, #b97a05);
+  background: linear-gradient(135deg, #4e2302, #4e2302);
   border-radius: 50%;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   margin: 0 2px;
@@ -449,7 +449,7 @@ button:active {
   margin: 0 auto;
   padding: 28px 28px 32px;
   box-sizing: border-box;
-  background: #f4e8d8;
+  background: #fefefe;
   border: 1px solid #d8bd9b;
   border-radius: 24px;
   position: relative;
@@ -626,15 +626,46 @@ button:active {
     height: auto !important;
     flex: 0 0 auto !important;
     box-sizing: border-box;
+    flex-direction: column !important;
 }
 
 .portfolio-item.original img { 
-    width: 90%; 
-    max-width: 100%; 
+    width: 120%; 
+    max-width: 120%; 
     height: auto !important; 
     display: block; 
-    margin: 0 auto; 
-    border-radius: 6px; 
+    margin-left: -10%; 
+    border-radius: 12px; 
+}
+
+.portfolio-item.facial {
+    width: 400px !important;
+    height: auto !important;
+    flex: 0 0 auto !important;
+    box-sizing: border-box;
+    flex-direction: column !important;
+}
+
+.portfolio-item video {
+    width: 120%;
+    height: auto;
+    display: block;
+    margin-left: -10%;
+    border-radius: 12px;
+}
+
+.portfolio-caption {
+    display: block;
+    width: fit-content;
+    margin: 12px auto 0;
+    padding: 7px 18px;
+    background: #fffaf2;
+    border: 1px solid #b89768;
+    border-radius: 8px;
+    color: #3f280c;
+    font-size: 13px;
+    text-align: center;
+    box-sizing: border-box;
 }
 
 
