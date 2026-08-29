@@ -621,6 +621,23 @@ button:active {
   font-weight: 700;
 }
 
+.portfolio-item.original {
+    width: 400px !important;
+    height: auto !important;
+    flex: 0 0 auto !important;
+    box-sizing: border-box;
+}
+
+.portfolio-item.original img { 
+    width: 90%; 
+    max-width: 100%; 
+    height: auto !important; 
+    display: block; 
+    margin: 0 auto; 
+    border-radius: 6px; 
+}
+
+
 /* =========================================
    모바일
 ========================================= */
