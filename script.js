@@ -14,13 +14,14 @@ function filterPortfolio(category, btn) {
       item.style.display = "none";
     }
   });
-  const slider = document.getElementById("portfolioSlider");
-  if (slider) {
-    slider.scrollTo({
-      left: 0,
-      behavior: "smooth",
-    });
-  }
+  const slider = document.getElementById("portfolioSlider"); 
+  if (slider) { 
+    slider.scrollTo({ 
+      top: 0, 
+      left: 0, 
+      behavior: "auto", 
+    }); 
+  } 
 }
 /* 아트머그 메뉴에서 이동 요청을 받음 */
 window.addEventListener("message", function (event) {
