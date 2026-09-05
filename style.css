@@ -654,6 +654,45 @@ button:active {
     border-radius: 12px;
 }
 
+.portfolio-item.special {
+    width: 400px !important;
+    height: auto !important;
+    flex: 0 0 auto !important;
+    box-sizing: border-box;
+    flex-direction: column !important;
+}
+
+.portfolio-item.special img {
+    width: 120%;
+    max-width: 120%;
+    height: auto !important;
+    display: block;
+    margin-left: -10%;
+    border-radius: 12px;
+}
+
+.portfolio-item.hair {
+    width: 400px !important;
+    height: auto !important;
+    flex: 0 0 auto !important;
+    box-sizing: border-box;
+    flex-direction: column !important;
+}
+
+.portfolio-item.hair img {
+    width: 160%;
+    max-width: 160%;
+    height: 400px;
+    object-fit: contain;
+    display: block;
+    margin-left: -30%;
+    border-radius: 12px;
+}
+
+.portfolio-item {
+    scroll-snap-align: start;
+}
+
 .portfolio-caption {
     display: block;
     width: fit-content;
@@ -667,6 +706,11 @@ button:active {
     text-align: center;
     box-sizing: border-box;
 }
+
+.portfolio-item.hair .portfolio-caption {
+    margin-top: -15px !important;
+}
+
 
 .dynamic-item {
     padding: 15px;
@@ -718,7 +762,6 @@ button:active {
 .dynamic-buttons button:hover {
     opacity: 0.8;
 }
-
 
 /* =========================================
    모바일

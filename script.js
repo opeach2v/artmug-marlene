@@ -28,7 +28,89 @@ function filterPortfolio(category, btn) {
       behavior: "auto",  
     });  
   }  
-} 
+}
+
+
+/* =========================================================
+   포트폴리오 가까운 항목에 자동 맞추기
+   ========================================================= */
+
+let portfolioSnapTimer = null;
+let portfolioIsSnapping = false;
+
+function snapToNearestPortfolio() {
+  const slider = document.getElementById("portfolioSlider");
+
+  if (!slider || portfolioIsSnapping) {
+    return;
+  }
+
+  const items = Array.from(
+    slider.querySelectorAll(".portfolio-item")
+  ).filter((item) => {
+    return getComputedStyle(item).display !== "none";
+  });
+
+  if (items.length === 0) {
+    return;
+  }
+
+  const currentScroll = slider.scrollTop;
+
+  let nearestItem = items[0];
+  let nearestDistance = Math.abs(
+    items[0].offsetTop - currentScroll
+  );
+
+  items.forEach((item) => {
+    const distance = Math.abs(
+      item.offsetTop - currentScroll
+    );
+
+    if (distance < nearestDistance) {
+      nearestDistance = distance;
+      nearestItem = item;
+    }
+  });
+
+  portfolioIsSnapping = true;
+
+  slider.scrollTo({
+    top: nearestItem.offsetTop,
+    behavior: "smooth"
+  });
+
+  setTimeout(() => {
+    portfolioIsSnapping = false;
+  }, 500);
+}
+
+
+/* =========================================================
+   포트폴리오 스크롤이 멈추면 가까운 항목에 착 붙기
+   ========================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+  const slider = document.getElementById("portfolioSlider");
+
+  if (!slider) {
+    return;
+  }
+
+  slider.addEventListener("scroll", function () {
+
+    if (portfolioIsSnapping) {
+      return;
+    }
+
+    clearTimeout(portfolioSnapTimer);
+
+    portfolioSnapTimer = setTimeout(() => {
+      snapToNearestPortfolio();
+    }, 150);
+
+  });
+});
 
 
 /* 아트머그 메뉴에서 이동 요청을 받음 */ 
