@@ -884,3 +884,248 @@ html {
 #copy-message.show {
   opacity: 1;
 }
+
+/* =========================================
+   모바일 최종 보정
+   PC 디자인은 유지하고, 700px 이하에서만 적용
+========================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+}
+
+img,
+video {
+  max-width: 100%;
+}
+
+/* 메인 박스가 모바일 화면보다 커지지 않도록 */
+.page-wrap {
+  width: 100%;
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+/* 섹션 좌우 여백 축소 */
+section {
+  width: 100%;
+  padding: 8px;
+}
+
+/* 상단 메뉴/제목 영역 */
+#sec-content {
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+#sec-content h3 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.content-span {
+  margin-right: 6px;
+  font-size: 14px;
+}
+
+/* 제목 배너 */
+.title {
+  width: min(290px, 85vw);
+  height: 60px;
+}
+
+/* 문의 입력 영역 */
+.input-box {
+  width: 100%;
+  padding: 25px 12px;
+  padding-top: 10px;
+}
+
+.avatar-set,
+.booth-item-set {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.input-box input[type="text"],
+.input-box textarea {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* 포트폴리오 전체 */
+.portfolio-wrapper {
+  width: 100%;
+  height: 600px;
+}
+
+.portfolio-slider {
+  width: 100%;
+  padding: 25px 8px 45px;
+}
+
+/* PC에서 400px로 고정했던 포트폴리오를 모바일 화면에 맞춤 */
+.portfolio-item,
+.portfolio-item.original,
+.portfolio-item.facial,
+.portfolio-item.special,
+.portfolio-item.hair {
+  width: min(400px, calc(100vw - 36px)) !important;
+  max-width: calc(100vw - 36px);
+}
+
+/* 원본/페이셜/특수표정 이미지 */
+.portfolio-item.original img,
+.portfolio-item.special img,
+.portfolio-item video {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin-left: 0;
+}
+
+/* 오리지널 헤어는 세로 비율이 제각각이므로
+   모바일에서는 고정 높이를 풀고 화면 안에 맞춤 */
+.portfolio-item.hair img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: contain;
+  margin-left: 0;
+}
+
+/* 캡션이 화면 밖으로 나가지 않도록 */
+.portfolio-caption {
+  max-width: 100%;
+  margin: 10px auto 0;
+  padding: 6px 12px;
+  font-size: 12px;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.portfolio-item.hair .portfolio-caption {
+  margin-top: 8px !important;
+}
+
+/* 작업순서 - 좁은 화면에서도 카드가 찌그러지지 않게 */
+.process-flow {
+  width: 100%;
+  max-width: 100%;
+  padding: 0 4px;
+  overflow-x: auto;
+  justify-content: flex-start;
+  -webkit-overflow-scrolling: touch;
+}
+
+.flow-step {
+  flex: 0 0 95px;
+}
+
+.flow-line {
+  flex: 0 0 24px;
+  min-width: 24px;
+}
+
+/* 작업 진행 상세 박스 */
+.process-detail-box {
+  width: 100%;
+  max-width: 100%;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+/* 작업 카드가 너무 좁아지지 않도록 가로 스크롤 */
+.detail-flow {
+  width: 100%;
+  justify-content: flex-start;
+  overflow-x: auto;
+  padding-bottom: 6px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.detail-card {
+  flex: 0 0 110px;
+}
+
+.detail-arrow {
+  flex: 0 0 18px;
+}
+
+/* 긴 설명은 모바일에서 자연스럽게 줄바꿈 */
+.detail-description,
+.process-notice {
+  overflow-wrap: anywhere;
+  word-break: keep-all;
+}
+
+/* 복사 완료 팝업 */
+#copy-message {
+  width: calc(100vw - 40px);
+  max-width: 360px;
+  padding: 18px 20px;
+  text-align: center;
+  font-size: 16px;
+}
+
+/* 모바일에서는 버튼/입력 요소가 화면 밖으로 나가지 않게 */
+button {
+  max-width: 100%;
+}
+
+textarea {
+  max-width: 100%;
+}
+
+/* 아주 작은 휴대폰 */
+@media (max-width: 420px) {
+  .content-span {
+    font-size: 13px;
+  }
+
+  #sec-content h3 {
+    font-size: 18px;
+  }
+
+  .portfolio-wrapper {
+    height: 560px;
+  }
+
+  .portfolio-slider {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .portfolio-item,
+  .portfolio-item.original,
+  .portfolio-item.facial,
+  .portfolio-item.special,
+  .portfolio-item.hair {
+    width: calc(100vw - 24px) !important;
+    max-width: calc(100vw - 24px);
+  }
+
+  .input-box {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .process-detail-box {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}
