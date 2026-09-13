@@ -1129,3 +1129,122 @@ textarea {
     padding-right: 8px;
   }
 }
+
+/* ================================
+   모바일 문의양식 잘림 수정
+================================ */
+
+@media (max-width: 700px) {
+
+  /* 페이지 전체가 내용 높이를 제대로 따라가도록 */
+  html,
+  body {
+    height: auto;
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .page-wrap {
+    width: 100%;
+    max-width: 100%;
+    min-height: 100vh;
+    height: auto;
+    overflow: visible;
+    box-sizing: border-box;
+  }
+
+  /* section이 내용만큼 계속 늘어나도록 */
+  section {
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+    box-sizing: border-box;
+  }
+
+  /* 문의 양식 박스 */
+  #sec-form {
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+  }
+
+  #sec-form .box {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+    box-sizing: border-box;
+    padding: 25px 15px !important;
+  }
+
+  /* 문의 양식 내부 */
+  #sec-form .input-box {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    padding: 25px 0 10px;
+    overflow: visible;
+    box-sizing: border-box;
+  }
+
+  #sec-form .form-wrapper {
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+  }
+
+  #sec-form .form-group {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+    box-sizing: border-box;
+  }
+
+  /* 긴 문장이 화면 밖으로 튀어나가지 않게 */
+  #sec-form .form-title,
+  #sec-form .form-desc,
+  #sec-form .form-sub-title {
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-break: keep-all;
+    white-space: normal;
+  }
+
+  /* 입력창 */
+  #sec-form input[type="text"],
+  #sec-form textarea {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* 하위 항목 */
+  #sec-form .form-sub-container {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 12px;
+    box-sizing: border-box;
+  }
+
+  /* 동적으로 추가되는 헤어/의상 박스 */
+  #sec-form .dynamic-item {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  #sec-form .dynamic-item input,
+  #sec-form .dynamic-item textarea {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* 복사 버튼 */
+  #sec-form button {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+}
