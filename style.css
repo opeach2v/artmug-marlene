@@ -39,9 +39,11 @@ body {
 }
 
 .page-wrap {
-  width: 800px;
-  max-width: none;
+  width: 100%;
+  max-width: 780px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
   background-color: #fdfbf4;
   box-sizing: border-box;
 }
@@ -254,7 +256,6 @@ button:active {
   padding: 25px 20px 45px;
   box-sizing: border-box;
 
-  scroll-snap-type: y mandatory;
   -webkit-overflow-scrolling: touch;
   scroll-behavior: smooth;
 }
@@ -674,24 +675,56 @@ button:active {
 .portfolio-item.hair {
     width: 400px !important;
     height: auto !important;
+
     flex: 0 0 auto !important;
-    box-sizing: border-box;
+
+    display: flex !important;
     flex-direction: column !important;
+    align-items: center !important;
+
+    box-sizing: border-box;
 }
 
+/* 이미지 */
 .portfolio-item.hair img {
-    width: 160%;
-    max-width: 160%;
-    height: 400px;
+    width: 160% !important;
+    max-width: none !important;
+
+    height: 400px !important;
+
     object-fit: contain;
+
     display: block;
-    margin-left: -30%;
+
+    margin-left: -30% !important;
+    margin-right: -30% !important;
+
     border-radius: 12px;
+
+    flex-shrink: 0;
 }
 
-.portfolio-item {
-    scroll-snap-align: start;
+/* 캡션 */
+.portfolio-item.hair .portfolio-caption {
+    position: relative;
+
+    display: block;
+
+    width: fit-content !important;
+
+    margin: -5px auto 0 !important;
+
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+
+    align-self: center !important;
+
+    z-index: 2;
+
+    text-align: center;
 }
+
 
 .portfolio-caption {
     display: block;
@@ -706,11 +739,6 @@ button:active {
     text-align: center;
     box-sizing: border-box;
 }
-
-.portfolio-item.hair .portfolio-caption {
-    margin-top: -15px !important;
-}
-
 
 .dynamic-item {
     padding: 15px;
@@ -763,30 +791,6 @@ button:active {
     opacity: 0.8;
 }
 
-/* =========================================
-   모바일
-========================================= */
-
-@media (max-width: 800px) {
-  html,
-  body {
-    min-width: 800px;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-  }
-
-  .page-wrap {
-    width: 800px;
-    max-width: none;
-    margin: 0;
-  }
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
 #copy-message {
   position: fixed;
 
@@ -817,4 +821,603 @@ html {
 
 #copy-message.show {
   opacity: 1;
+}
+
+/* =========================================
+   모바일
+   PC 디자인은 유지하면서 모바일 화면에 맞게 축소
+========================================= */
+
+@media screen and (max-width: 780px) {
+
+  html,
+  body {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  body {
+    box-sizing: border-box;
+  }
+
+  .page-wrap {
+    width: 100%;
+    max-width: 780px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+
+  /* -----------------------------
+     기본 영역
+  ----------------------------- */
+
+  section {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 8px;
+  }
+
+  .box {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    border-radius: 24px;
+  }
+
+
+  /* -----------------------------
+     제목
+  ----------------------------- */
+
+  .title {
+    width: min(290px, 80%);
+    height: auto;
+    min-height: 55px;
+
+    aspect-ratio: 290 / 60;
+
+    line-height: normal;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+  }
+
+
+  /* -----------------------------
+     가격표
+  ----------------------------- */
+
+  #sec-price .box > div {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  #sec-price [style*="grid-template-columns: repeat(2"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  #sec-price [style*="grid-template-columns: 1fr"] {
+    width: 100%;
+    max-width: 100%;
+  }
+
+
+  /* 가격표 안의 긴 문장 */
+  #sec-price span,
+  #sec-price strong {
+    max-width: 100%;
+  }
+
+  #sec-price [style*="justify-content: space-between"] {
+    min-width: 0;
+  }
+
+  #sec-price [style*="justify-content: space-between"] > span:first-child {
+    min-width: 0;
+    overflow-wrap: break-word;
+    word-break: keep-all;
+  }
+
+  /* 가격표 모바일 글자 크기 */
+#sec-price span {
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+#sec-price strong {
+  font-size: 13px;
+}
+
+
+  /* -----------------------------
+     작업 순서
+  ----------------------------- */
+
+  .process-flow {
+  width: 100%;
+  max-width: 100%;
+
+  margin: 30px auto 35px;
+  padding: 0 2px;
+
+  display: flex;
+  flex-wrap: nowrap;
+
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 0;
+
+  box-sizing: border-box;
+}
+
+.flow-step {
+  flex: 1 1 0;
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+}
+
+.flow-number {
+  width: 38px;
+  height: 38px;
+
+  flex-shrink: 0;
+
+  font-size: 12px;
+}
+
+.flow-title {
+  margin-top: 9px;
+
+  font-size: 11px;
+  line-height: 1.35;
+
+  word-break: keep-all;
+  white-space: normal;
+}
+
+.flow-line {
+  flex: 0 1 30px;
+
+  min-width: 10px;
+  max-width: 35px;
+
+  height: 2px;
+
+  margin-top: 18px;
+}
+
+
+/* =========================================
+   모바일 - 세부 작업 진행
+========================================= */
+
+.process-detail-box {
+  width: 100%;
+  max-width: 100%;
+
+  padding: 22px 10px 25px;
+
+  box-sizing: border-box;
+}
+
+.detail-heading {
+  margin-bottom: 22px;
+}
+
+.detail-heading h3 {
+  font-size: 18px;
+}
+
+.detail-description {
+  font-size: 13px;
+  line-height: 1.6;
+
+  word-break: keep-all;
+}
+
+
+/* 세부 작업 카드도 PC처럼 가로 흐름 유지 */
+.detail-flow {
+  display: flex;
+  flex-wrap: nowrap;
+
+  align-items: stretch;
+  justify-content: center;
+
+  gap: 5px;
+
+  width: 100%;
+  max-width: 100%;
+}
+
+.detail-card {
+  flex: 1 1 0;
+  min-width: 0;
+
+  padding: 13px 5px 14px;
+
+  border-radius: 13px;
+}
+
+.detail-number {
+  min-height: 32px;
+
+  padding: 5px 3px;
+
+  font-size: 11px;
+  line-height: 1.3;
+
+  word-break: keep-all;
+}
+
+.detail-info {
+  height: 30px;
+  margin-top: 9px;
+}
+
+.feedback {
+  padding: 4px 6px;
+
+  font-size: 10px;
+
+  white-space: nowrap;
+}
+
+.detail-card p {
+  margin-top: 9px;
+
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+.detail-card p strong {
+  font-size: 11px;
+}
+
+.detail-arrow {
+  display: flex;
+
+  flex: 0 0 10px;
+
+  font-size: 13px;
+}
+
+
+/* 작업 기간 안내 */
+.process-notice {
+  margin-top: 15px;
+
+  padding: 10px 3px;
+
+  font-size: 11px;
+  line-height: 1.7;
+
+  word-break: keep-all;
+}
+
+
+  /* -----------------------------
+     포트폴리오
+  ----------------------------- */
+
+  /* 포트폴리오 카테고리 - 모바일 한 줄 */
+  .portfolio-tabs {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+
+    width: 100%;
+    max-width: 100%;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 2px;
+
+    padding: 0 4px;
+    margin: 0 auto;
+
+    box-sizing: border-box;
+    box-shadow: none !important;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .portfolio-tabs button {
+    flex: 0 1 auto !important;
+
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: none !important;
+
+    padding: 6px 7px;
+
+    font-size: 11px;
+    white-space: nowrap;
+    box-shadow: none !important;
+    box-sizing: border-box;
+  }
+  
+  .portfolio-wrapper {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .portfolio-slider {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 20px 10px 40px;
+    scroll-snap-type: y mandatory;
+    overflow-x: hidden;
+  }
+
+  .portfolio-item.original,
+  .portfolio-item.facial,
+  .portfolio-item.special {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 auto !important;
+    box-sizing: border-box;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+  }
+
+  .portfolio-item.hair {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+
+    box-sizing: border-box;
+    overflow: visible !important;
+  }
+
+
+  /* 헤드 원화 */
+  .portfolio-item.original img {
+    width: 90%;
+    max-width: 90%;
+
+    height: auto !important;
+
+    margin-left: auto !important;
+    margin-right: auto !important;
+
+    object-fit: contain;
+  }
+
+
+  /* 페이셜 */
+  .portfolio-item.facial video {
+    width: 90%;
+    max-width: 90%;
+
+    height: auto;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+
+  /* 특수표정 */
+  .portfolio-item.special img {
+    width: 90%;
+    max-width: 90%;
+
+    height: auto !important;
+
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+
+  /* 오리지널 헤어 */
+  .portfolio-item.hair img {
+    width: 100% !important;
+    max-width: 100% !important;
+
+    height: 200px !important;
+
+    object-fit: contain;
+    object-position: center center;
+
+    display: block !important;
+
+    margin: 0 auto !important;
+
+    position: static !important;
+    transform: none !important;
+
+    border-radius: 12px;
+
+    flex-shrink: 0;
+  }
+
+  .portfolio-caption {
+    max-width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    white-space: normal;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+
+  .portfolio-item.hair .portfolio-caption {
+    width: fit-content !important;
+    max-width: 90%;
+
+    margin: -5px auto 0 !important;
+
+    position: static !important;
+    transform: none !important;
+    left: auto !important;
+    right: auto !important;
+
+    align-self: center !important;
+
+    font-size: 12px;
+    text-align: center;
+
+    white-space: normal;
+    box-sizing: border-box;
+  }
+
+
+  /* -----------------------------
+     문의 양식
+  ----------------------------- */
+
+  #sec-form .box {
+    padding: 25px 15px !important;
+  }
+
+  .input-box {
+    width: 100%;
+    max-width: 100%;
+
+    padding: 10px 0 !important;
+
+    box-sizing: border-box;
+  }
+
+  .form-wrapper {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .form-group {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .form-sub-container {
+    width: 100%;
+    max-width: 100%;
+
+    padding-left: 12px;
+
+    box-sizing: border-box;
+  }
+
+  .form-title,
+  .form-sub-title,
+  .form-desc {
+    max-width: 100%;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+
+  .input-box input[type="text"],
+  .input-box textarea {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+
+  /* -----------------------------
+     문의 양식 동적 항목
+  ----------------------------- */
+
+  .dynamic-item {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .dynamic-item input,
+  .dynamic-item textarea {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+
+  /* -----------------------------
+     주의사항
+  ----------------------------- */
+
+  #sec-caution .box > div {
+    max-width: 100% !important;
+    width: 100% !important;
+
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+
+    box-sizing: border-box;
+  }
+
+  #sec-caution {
+    overflow: hidden;
+  }
+
+  #sec-caution strong,
+  #sec-caution div {
+    overflow-wrap: break-word;
+  }
+
+
+  /* -----------------------------
+     예약 현황
+  ----------------------------- */
+
+  #sec-booking {
+    overflow: hidden;
+  }
+
+
+  /* -----------------------------
+     버튼 / 탭
+  ----------------------------- */
+
+  .portfolio-tabs {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .portfolio-tabs button {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+
+  /* -----------------------------
+     복사 완료 메시지
+  ----------------------------- */
+
+  #copy-message {
+    max-width: calc(100vw - 40px);
+    box-sizing: border-box;
+
+    padding: 20px 30px;
+
+    font-size: 18px;
+    white-space: nowrap;
+  }
+
 }
