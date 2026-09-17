@@ -931,12 +931,12 @@ button:active {
 
   /* 가격표 모바일 글자 크기 */
 #sec-price span {
-  font-size: 12px;
+  font-size: 14px !important;
   line-height: 1.5;
 }
 
 #sec-price strong {
-  font-size: 13px;
+  font-size: 14px !important;
 }
 
 
@@ -1405,6 +1405,14 @@ button:active {
     box-sizing: border-box;
   }
 
+  #sec-caution p,
+  #sec-caution span,
+  #sec-form p,
+  #sec-form span {
+    font-size: 13px !important;
+    line-height: 1.6;
+  }
+
 
   /* -----------------------------
      복사 완료 메시지
@@ -1419,5 +1427,4 @@ button:active {
     font-size: 18px;
     white-space: nowrap;
   }
-
 }

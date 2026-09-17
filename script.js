@@ -1,36 +1,33 @@
-function filterPortfolio(category, btn) {
-  const buttons = document.querySelectorAll(".tab-btn");
+function filterPortfolio(category, btn) { 
+  const buttons = document.querySelectorAll(".tab-btn"); 
 
-  buttons.forEach((b) => {
-    b.style.background = "#fff";
-    b.style.color = "#b89768";
-  });
+  buttons.forEach((b) => { 
+    b.style.background = "#fff"; 
+    b.style.color = "#b89768"; 
+  }); 
 
-  btn.style.background = "#b89768";
-  btn.style.color = "#fff";
+  btn.style.background = "#b89768"; 
+  btn.style.color = "#fff"; 
 
-  const items = document.querySelectorAll("#portfolioSlider .portfolio-item");
+  const items = document.querySelectorAll(".portfolio-item"); 
 
-  items.forEach((item) => {
-    const isVisible =
-      category === "all" || item.classList.contains(category);
+  items.forEach((item) => { 
+    if (category === "all" || item.classList.contains(category)) { 
+      item.style.display = "flex"; 
+    } else { 
+      item.style.display = "none"; 
+    } 
+  }); 
 
-    item.style.setProperty(
-      "display",
-      isVisible ? "flex" : "none",
-      "important"
-    );
-  });
+  const slider = document.getElementById("portfolioSlider");  
 
-  const slider = document.getElementById("portfolioSlider");
-
-  if (slider) {
-    slider.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: "auto",
-    });
-  }
+  if (slider) {  
+    slider.scrollTo({  
+      top: 0,  
+      left: 0,  
+      behavior: "auto",  
+    });  
+  }  
 }
 
 
@@ -675,11 +672,3 @@ ${finalFile}
       alert("복사에 실패했습니다."); 
     }); 
 }
-
-document.addEventListener("DOMContentLoaded", function () {
-  const firstTab = document.querySelector(".tab-btn");
-
-  if (firstTab) {
-    filterPortfolio("original", firstTab);
-  }
-});
