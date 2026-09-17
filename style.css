@@ -39,11 +39,11 @@ body {
 }
 
 .page-wrap {
-  max-width: 780px;
+  width: 800px;
+  max-width: none;
   margin: 0 auto;
-  position: relative;
-  z-index: 1;
   background-color: #fdfbf4;
+  box-sizing: border-box;
 }
 
 .awning {
@@ -767,85 +767,19 @@ button:active {
    모바일
 ========================================= */
 
-@media (max-width: 700px) {
-  .process-flow {
-    margin-top: 35px;
+@media (max-width: 800px) {
+  html,
+  body {
+    min-width: 800px;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
   }
 
-  .flow-step {
-    flex: 1;
-  }
-
-  .flow-number {
-    width: 40px;
-    height: 40px;
-    font-size: 14px;
-  }
-
-  .flow-line {
-    min-width: 10px;
-    margin-top: 19px;
-  }
-
-  .flow-title {
-    margin-top: 10px;
-    font-size: 14px;
-  }
-
-  .process-detail-box {
-    padding: 25px 10px 22px;
-    border-radius: 19px;
-  }
-
-  .detail-heading {
-    margin-bottom: 28px;
-  }
-
-  .detail-heading h3 {
-    font-size: 18px;
-  }
-
-  .detail-description {
-    font-size: 14px;
-    margin-bottom: 24px;
-  }
-
-  .detail-flow {
-    gap: 4px;
-  }
-
-  .detail-card {
-    padding: 12px 5px;
-    border-radius: 13px;
-  }
-
-  .detail-number {
-    min-height: 38px;
-    padding: 5px 4px;
-    font-size: 14px;
-  }
-
-  .detail-info {
-    margin-top: 12px;
-    height: 34px;
-  }
-
-  .feedback {
-    padding: 4px 5px;
-    font-size: 14px;
-  }
-
-  .detail-card p {
-    margin-top: 8px;
-    font-size: 14px;
-  }
-
-  .detail-card p strong {
-    font-size: 14px;
-  }
-
-  .detail-arrow {
-    font-size: 16px;
+  .page-wrap {
+    width: 800px;
+    max-width: none;
+    margin: 0;
   }
 }
 
