@@ -1,33 +1,33 @@
-function filterPortfolio(category, btn) { 
-  const buttons = document.querySelectorAll(".tab-btn"); 
+function filterPortfolio(category, btn) {
+  const buttons = document.querySelectorAll(".tab-btn");
 
-  buttons.forEach((b) => { 
-    b.style.background = "#fff"; 
-    b.style.color = "#b89768"; 
-  }); 
+  buttons.forEach((b) => {
+    b.style.background = "#fff";
+    b.style.color = "#b89768";
+  });
 
-  btn.style.background = "#b89768"; 
-  btn.style.color = "#fff"; 
+  btn.style.background = "#b89768";
+  btn.style.color = "#fff";
 
-  const items = document.querySelectorAll(".portfolio-item"); 
+  const items = document.querySelectorAll("#portfolioSlider .portfolio-item");
 
-  items.forEach((item) => { 
-    if (category === "all" || item.classList.contains(category)) { 
-      item.style.display = "flex"; 
-    } else { 
-      item.style.display = "none"; 
-    } 
-  }); 
+  items.forEach((item) => {
+    if (item.classList.contains(category)) {
+      item.style.setProperty("display", "flex", "important");
+    } else {
+      item.style.setProperty("display", "none", "important");
+    }
+  });
 
-  const slider = document.getElementById("portfolioSlider");  
+  const slider = document.getElementById("portfolioSlider");
 
-  if (slider) {  
-    slider.scrollTo({  
-      top: 0,  
-      left: 0,  
-      behavior: "auto",  
-    });  
-  }  
+  if (slider) {
+    slider.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "auto"
+    });
+  }
 }
 
 
@@ -85,16 +85,20 @@ function snapToNearestPortfolio() {
   }, 500);
 }
 
-
-/* =========================================================
-   포트폴리오 스크롤이 멈추면 가까운 항목에 착 붙기
-   ========================================================= */
-
 document.addEventListener("DOMContentLoaded", function () {
   const slider = document.getElementById("portfolioSlider");
 
   if (!slider) {
     return;
+  }
+
+  /* 헤드 원화를 기본 선택 */
+  const originalButton = document.querySelector(
+    '.tab-btn[onclick*="filterPortfolio(\'original\'"]'
+  );
+
+  if (originalButton) {
+    filterPortfolio("original", originalButton);
   }
 
   slider.addEventListener("scroll", function () {
