@@ -639,6 +639,23 @@ button:active {
     border-radius: 12px; 
 }
 
+.portfolio-item.head {
+    width: 400px !important;
+    height: auto !important;
+    flex: 0 0 auto !important;
+    box-sizing: border-box;
+    flex-direction: column !important;
+}
+
+.portfolio-item.head img { 
+    width: 120%; 
+    max-width: 120%; 
+    height: auto !important; 
+    display: block; 
+    margin-left: -10%; 
+    border-radius: 12px; 
+}
+
 .portfolio-item.facial {
     width: 400px !important;
     height: auto !important;
