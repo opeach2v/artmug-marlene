@@ -74,6 +74,130 @@
                     </div>
                 </div>
             </section>
+
+            <!-- 포트폴리오 영역 -->
+            <section id="sec-portfolio">
+                <div class="box">
+                    <h2 class="title">포트폴리오</h2>
+                    <div class="portfolio-tabs" style="display: flex; justify-content: center; gap: 8px; margin: 20px 0; flex-wrap: wrap;">
+                        <button class="tab-btn active" onclick="filterPortfolio('original', this)" style="width: auto; padding: 8px 16px; border: 1px solid #b89768; background: #fff; color: #b89768; border-radius: 20px; cursor: pointer;">개인작</button>
+                        <button class="tab-btn" onclick="filterPortfolio('head', this)" style="width: auto; padding: 8px 16px; border: 1px solid #b89768; background: #fff; color: #b89768; border-radius: 20px; cursor: pointer;">헤드 원화</button>
+                        <button class="tab-btn" onclick="filterPortfolio('facial', this)" style="width: auto; padding: 8px 16px; border: 1px solid #b89768; background: #fff; color: #b89768; border-radius: 20px; cursor: pointer;">페이셜</button>
+                        <button class="tab-btn" onclick="filterPortfolio('special', this)" style="width: auto; padding: 8px 16px; border: 1px solid #b89768; background: #fff; color: #b89768; border-radius: 20px; cursor: pointer;">특수표정</button>
+                        <button class="tab-btn" onclick="filterPortfolio('hair', this)" style="width: auto; padding: 8px 16px; border: 1px solid #b89768; background: #fff; color: #b89768; border-radius: 20px; cursor: pointer;">오리지널 헤어</button>
+                    </div>
+                    <p style="text-align: center; color: #3f280c; font-size: 14px; margin: 10px 0 12px;">
+                        ＊ 위로 갈수록 최근 작업입니다. (우측 슬라이드바 이용)
+                    </p>
+                    <div class="portfolio-wrapper">
+                        <div class="portfolio-slider" id="portfolioSlider">
+                            <!-- 개인작 -->
+                            <div class="portfolio-item original">
+                                <img src="image/개인작1.png" alt="개인작1">
+                                <div class="portfolio-caption">[판매중] 헤드 원화 + 모델링 + 페이셜 + 시나노 바디 결합<br>/ 오리지널 헤어 & 의상 모델링 및 리깅</div>
+                            </div>
+
+                            <!-- 헤드 원화 -->
+                            <div class="portfolio-item head">
+                                <img src="image/Head6.png" alt="헤드 원화 6">
+                                <div class="portfolio-caption">[개인작] 협업작, 모델링+텍스처 단계에서 약간 수정됨</div>
+                            </div>
+                            <div class="portfolio-item head">
+                                <img src="image/Head5.png" alt="헤드 원화 5">
+                                <div class="portfolio-caption">[벨시님] 기존 헤드 퀄리티업</div>
+                            </div>
+                            <div class="portfolio-item head">
+                                <img src="image/Head4.png" alt="헤드 원화 4">
+                                <div class="portfolio-caption">[클로삐님] 기존 헤드 퀄리티업</div>
+                            </div>
+                            <div class="portfolio-item head">
+                                <img src="image/Head1.png" alt="헤드 원화 1">
+                                <div class="portfolio-caption">[익명님] 기존 헤드 퀄리티업</div>
+                            </div>
+                            <div class="portfolio-item head">
+                                <img src="image/Head3.png" alt="헤드 원화 3">
+                                <div class="portfolio-caption">[하유인님] 렌즈 디자인 X</div>
+                            </div>
+                            <div class="portfolio-item head">
+                                <img src="image/Head2.png" alt="헤드 원화 2">
+                                <div class="portfolio-caption">[카네님]</div>
+                            </div>
+
+                            <!-- 페이셜 -->
+                             <div class="portfolio-item facial">
+                                <video src="image/facial6.mp4" autoplay loop muted playsinline></video>
+                                <div class="portfolio-caption">[판매용 개인작] 헤드 모델링 + 페이셜</div>
+                            </div>
+                            <div class="portfolio-item facial">
+                                <video src="image/facial5.mp4" autoplay loop muted playsinline></video>
+                                <div class="portfolio-caption">[익명님] 헤드 모델링 + 페이셜</div>
+                            </div>
+                            <div class="portfolio-item facial">
+                                <video src="image/facial4.mp4" autoplay loop muted playsinline></video>
+                                <div class="portfolio-caption">[유리넬님] 헤드 모델링 + 페이셜</div>
+                            </div>
+                            <div class="portfolio-item facial">
+                                <video src="image/facial3.mp4" autoplay loop muted playsinline></video>
+                                <div class="portfolio-caption">[벨시님] 헤드 모델링 + 페이셜</div>
+                            </div>
+                            <div class="portfolio-item facial">
+                                <video src="image/facial2.mp4" autoplay loop muted playsinline></video>
+                                <div class="portfolio-caption">[클로삐님] 헤드 모델링 + 페이셜</div>
+                            </div>
+                            <div class="portfolio-item facial">
+                                <video src="image/facial1.mp4" autoplay loop muted playsinline></video>
+                                <div class="portfolio-caption">[딸기요미님] 헤드 모델링 + 페이셜</div>
+                            </div>
+
+                            <!-- 특수표정 -->
+                            <div class="portfolio-item special">
+                                <img src="image/Emo5.png" alt="특수표정 5">
+                                <div class="portfolio-caption">[익명님] 일반 특수표정 4종</div>
+                            </div>
+                            <div class="portfolio-item special">
+                                <img src="image/Emo4.png" alt="특수표정 4">
+                                <div class="portfolio-caption">[유리넬님] 일반 특수표정 4종</div>
+                            </div>
+                            <div class="portfolio-item special">
+                                <img src="image/Emo3.png" alt="특수표정 3">
+                                <div class="portfolio-caption">[벨시님] 일반 특수표정 4종</div>
+                            </div>
+                            <div class="portfolio-item special">
+                                <img src="image/Emo2.png" alt="특수표정 2">
+                                <div class="portfolio-caption">[클로삐님] 일반 특수표정 4종</div>
+                            </div>
+                            <div class="portfolio-item special">
+                                <img src="image/Emo1.png" alt="특수표정 1">
+                                <div class="portfolio-caption">[딸기요미님] 일반 특수표정 4종</div>
+                            </div>
+
+                            <!-- 오리지널 헤어 -->
+                            <div class="portfolio-item hair">
+                                <img src="image/hair5.png" alt="오리지널 헤어 5">
+                                <div class="portfolio-caption">[개인작]</div>
+                            </div>
+                            <div class="portfolio-item hair">
+                                <img src="image/hair4.png" alt="오리지널 헤어 4">
+                                <div class="portfolio-caption">[유리넬님]</div>
+                            </div>
+                            <div class="portfolio-item hair">
+                                <img src="image/hair3.png" alt="오리지널 헤어 3">
+                                <div class="portfolio-caption">[벨시님]</div>
+                            </div>
+                            <div class="portfolio-item hair">
+                                <img src="image/hair2.png" alt="오리지널 헤어 2">
+                                <div class="portfolio-caption">[클로삐님]</div>
+                            </div> 
+                            <div class="portfolio-item hair">
+                                <img src="image/hair1.png" alt="오리지널 헤어 1">
+                                <div class="portfolio-caption">[딸기요미님]</div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <!-- 가격표 영역 -->
             <section id="sec-price" style="font-weight: 700;">
                 <div class="box">
@@ -570,128 +694,6 @@
                             <p>
                                 작업 시작일부터 최종 파일 전달까지의 전체 작업 기간은 약 1개월 정도로 생각해 주세요. :)
                             </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- 포트폴리오 영역 -->
-            <section id="sec-portfolio">
-                <div class="box">
-                    <h2 class="title">포트폴리오</h2>
-                    <div class="portfolio-tabs" style="display: flex; justify-content: center; gap: 8px; margin: 20px 0; flex-wrap: wrap;">
-                        <button class="tab-btn active" onclick="filterPortfolio('original', this)" style="width: auto; padding: 8px 16px; border: 1px solid #b89768; background: #fff; color: #b89768; border-radius: 20px; cursor: pointer;">개인작</button>
-                        <button class="tab-btn" onclick="filterPortfolio('head', this)" style="width: auto; padding: 8px 16px; border: 1px solid #b89768; background: #fff; color: #b89768; border-radius: 20px; cursor: pointer;">헤드 원화</button>
-                        <button class="tab-btn" onclick="filterPortfolio('facial', this)" style="width: auto; padding: 8px 16px; border: 1px solid #b89768; background: #fff; color: #b89768; border-radius: 20px; cursor: pointer;">페이셜</button>
-                        <button class="tab-btn" onclick="filterPortfolio('special', this)" style="width: auto; padding: 8px 16px; border: 1px solid #b89768; background: #fff; color: #b89768; border-radius: 20px; cursor: pointer;">특수표정</button>
-                        <button class="tab-btn" onclick="filterPortfolio('hair', this)" style="width: auto; padding: 8px 16px; border: 1px solid #b89768; background: #fff; color: #b89768; border-radius: 20px; cursor: pointer;">오리지널 헤어</button>
-                    </div>
-                    <p style="text-align: center; color: #3f280c; font-size: 14px; margin: 10px 0 12px;">
-                        ＊ 위로 갈수록 최근 작업입니다. (우측 슬라이드바 이용)
-                    </p>
-                    <div class="portfolio-wrapper">
-                        <div class="portfolio-slider" id="portfolioSlider">
-                            <!-- 개인작 -->
-                            <div class="portfolio-item original">
-                                <img src="image/개인작1.png" alt="개인작1">
-                                <div class="portfolio-caption">[판매중] 헤드 원화 + 모델링 + 페이셜 + 시나노 바디 결합<br>/ 오리지널 헤어 & 의상 모델링 및 리깅</div>
-                            </div>
-
-                            <!-- 헤드 원화 -->
-                            <div class="portfolio-item head">
-                                <img src="image/Head6.png" alt="헤드 원화 6">
-                                <div class="portfolio-caption">[개인작] 협업작, 모델링+텍스처 단계에서 약간 수정됨</div>
-                            </div>
-                            <div class="portfolio-item head">
-                                <img src="image/Head5.png" alt="헤드 원화 5">
-                                <div class="portfolio-caption">[벨시님] 기존 헤드 퀄리티업</div>
-                            </div>
-                            <div class="portfolio-item head">
-                                <img src="image/Head4.png" alt="헤드 원화 4">
-                                <div class="portfolio-caption">[클로삐님] 기존 헤드 퀄리티업</div>
-                            </div>
-                            <div class="portfolio-item head">
-                                <img src="image/Head1.png" alt="헤드 원화 1">
-                                <div class="portfolio-caption">[익명님] 기존 헤드 퀄리티업</div>
-                            </div>
-                            <div class="portfolio-item head">
-                                <img src="image/Head3.png" alt="헤드 원화 3">
-                                <div class="portfolio-caption">[하유인님] 렌즈 디자인 X</div>
-                            </div>
-                            <div class="portfolio-item head">
-                                <img src="image/Head2.png" alt="헤드 원화 2">
-                                <div class="portfolio-caption">[카네님]</div>
-                            </div>
-
-                            <!-- 페이셜 -->
-                             <div class="portfolio-item facial">
-                                <video src="image/facial6.mp4" autoplay loop muted playsinline></video>
-                                <div class="portfolio-caption">[판매용 개인작] 헤드 모델링 + 페이셜</div>
-                            </div>
-                            <div class="portfolio-item facial">
-                                <video src="image/facial5.mp4" autoplay loop muted playsinline></video>
-                                <div class="portfolio-caption">[익명님] 헤드 모델링 + 페이셜</div>
-                            </div>
-                            <div class="portfolio-item facial">
-                                <video src="image/facial4.mp4" autoplay loop muted playsinline></video>
-                                <div class="portfolio-caption">[유리넬님] 헤드 모델링 + 페이셜</div>
-                            </div>
-                            <div class="portfolio-item facial">
-                                <video src="image/facial3.mp4" autoplay loop muted playsinline></video>
-                                <div class="portfolio-caption">[벨시님] 헤드 모델링 + 페이셜</div>
-                            </div>
-                            <div class="portfolio-item facial">
-                                <video src="image/facial2.mp4" autoplay loop muted playsinline></video>
-                                <div class="portfolio-caption">[클로삐님] 헤드 모델링 + 페이셜</div>
-                            </div>
-                            <div class="portfolio-item facial">
-                                <video src="image/facial1.mp4" autoplay loop muted playsinline></video>
-                                <div class="portfolio-caption">[딸기요미님] 헤드 모델링 + 페이셜</div>
-                            </div>
-
-                            <!-- 특수표정 -->
-                            <div class="portfolio-item special">
-                                <img src="image/Emo5.png" alt="특수표정 5">
-                                <div class="portfolio-caption">[익명님] 일반 특수표정 4종</div>
-                            </div>
-                            <div class="portfolio-item special">
-                                <img src="image/Emo4.png" alt="특수표정 4">
-                                <div class="portfolio-caption">[유리넬님] 일반 특수표정 4종</div>
-                            </div>
-                            <div class="portfolio-item special">
-                                <img src="image/Emo3.png" alt="특수표정 3">
-                                <div class="portfolio-caption">[벨시님] 일반 특수표정 4종</div>
-                            </div>
-                            <div class="portfolio-item special">
-                                <img src="image/Emo2.png" alt="특수표정 2">
-                                <div class="portfolio-caption">[클로삐님] 일반 특수표정 4종</div>
-                            </div>
-                            <div class="portfolio-item special">
-                                <img src="image/Emo1.png" alt="특수표정 1">
-                                <div class="portfolio-caption">[딸기요미님] 일반 특수표정 4종</div>
-                            </div>
-
-                            <!-- 오리지널 헤어 -->
-                            <div class="portfolio-item hair">
-                                <img src="image/hair5.png" alt="오리지널 헤어 5">
-                                <div class="portfolio-caption">[개인작]</div>
-                            </div>
-                            <div class="portfolio-item hair">
-                                <img src="image/hair4.png" alt="오리지널 헤어 4">
-                                <div class="portfolio-caption">[유리넬님]</div>
-                            </div>
-                            <div class="portfolio-item hair">
-                                <img src="image/hair3.png" alt="오리지널 헤어 3">
-                                <div class="portfolio-caption">[벨시님]</div>
-                            </div>
-                            <div class="portfolio-item hair">
-                                <img src="image/hair2.png" alt="오리지널 헤어 2">
-                                <div class="portfolio-caption">[클로삐님]</div>
-                            </div> 
-                            <div class="portfolio-item hair">
-                                <img src="image/hair1.png" alt="오리지널 헤어 1">
-                                <div class="portfolio-caption">[딸기요미님]</div>
-                            </div>
-
                         </div>
                     </div>
                 </div>
