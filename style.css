@@ -1138,42 +1138,38 @@ button:active {
   .portfolio-tabs {
     display: flex !important;
     flex-wrap: nowrap !important;
+    justify-content: center !important;
+    align-items: center !important;
 
-    width: 100%;
-    max-width: 100%;
+    width: 100% !important;
+    max-width: 100% !important;
 
-    justify-content: center;
-    align-items: center;
-
-    gap: 2px;
-
-    padding: 0 4px;
-    margin: 0 auto;
+    gap: 4px !important;
+    padding: 0 !important;
+    margin: 20px auto !important;
 
     box-sizing: border-box;
-    box-shadow: none !important;
     overflow: hidden;
-    white-space: nowrap;
   }
 
   .portfolio-tabs button {
     flex: 0 1 auto !important;
-
     width: auto !important;
     min-width: 0 !important;
-    max-width: none !important;
 
-    padding: 6px 7px;
+    padding: 6px 5px !important;
 
-    font-size: 11px;
-    white-space: nowrap;
-    box-shadow: none !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+
+    font-size: 11px !important;
     box-sizing: border-box;
   }
   
   .portfolio-wrapper {
     width: 100%;
     max-width: 100%;
+    height: 450px;
     box-sizing: border-box;
   }
 
@@ -1187,6 +1183,7 @@ button:active {
   }
 
   .portfolio-item.original,
+  .portfolio-item.head,
   .portfolio-item.facial,
   .portfolio-item.special {
     width: 100% !important;
@@ -1211,16 +1208,25 @@ button:active {
   }
 
 
-  /* 헤드 원화 */
+  /* 헤드 개인작 */
   .portfolio-item.original img {
-    width: 90%;
-    max-width: 90%;
+    width: 90% !important;
+    max-width: 90% !important;
 
     height: auto !important;
 
     margin-left: auto !important;
     margin-right: auto !important;
 
+    object-fit: contain;
+  }
+
+  /* 헤드 원화 */
+  .portfolio-item.head img {
+    width: 90% !important;
+    max-width: 90% !important;
+    height: auto !important;
+    margin: 0 auto !important;
     object-fit: contain;
   }
 
