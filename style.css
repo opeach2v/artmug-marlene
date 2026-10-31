@@ -221,7 +221,7 @@ button:active {
 .portfolio-wrapper {
   position: relative;
   width: 100%;
-  height: 600px;
+  height: 700px;
   overflow: hidden;
 
   /* 위아래가 자연스럽게 흐려지는 효과 */
